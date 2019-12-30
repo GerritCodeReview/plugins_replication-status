@@ -1,0 +1,42 @@
+# Config
+
+The plugin itself has no specific configuration, however some Gerrit specific
+settings are relevant.
+
+## Cache
+
+This plugin relies on a cache to store replication status information, the
+global cache configuration settings apply.
+
+Please look at
+the [gerrit cache documentation](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#cache)
+for more information on this.
+
+In particular:
+
+* To define the lifespan of replication-status entries in the cache, look at
+  the [maxAge](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#cache.name.maxAge)
+  documentation. *Default*: store forever with no expire
+
+* To define how much disk space the replication-status cache can take, look at
+  the [diskLimit](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#cache.name.diskLimit)
+  documentation. *Default*: disk storage for the cache is disabled
+
+To modify this cache behaviour add the following stanza to the `gerrit.config`,
+for example:
+
+```
+[cache "replication-status.replication_status"]
+   diskLimit = 52428800 # 50 Mb
+   maxAge = 1 day
+```
+
+## Gerrit instanceId
+
+[gerrit.instanceId](https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#gerrit.instanceId)
+is expected to be populated. This is needed to the plugin to discriminate
+between events produced by the current instances versus events produced by
+different instances.
+
+Installing this plugin on Gerrit instances not having `gerrit.instanceId`
+populated will prevent this plugin from loading.
