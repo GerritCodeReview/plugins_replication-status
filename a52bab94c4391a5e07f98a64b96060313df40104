@@ -46,6 +46,30 @@
       "revId": "a52bab94c4391a5e07f98a64b96060313df40104",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbee6096_36d87bc1",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/StatusMetrics.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2020-01-03T15:52:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe013d16_0c94657e",
+      "range": {
+        "startLine": 53,
+        "startChar": 3,
+        "endLine": 79,
+        "endChar": 5
+      },
+      "revId": "a52bab94c4391a5e07f98a64b96060313df40104",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }

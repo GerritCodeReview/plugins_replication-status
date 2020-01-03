@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fea51c53_74056252",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2020-01-03T15:52:58Z",
+      "side": 1,
+      "message": "When catching a RefUpdatedEvent it is not possible to distinguish between an event generated from the same node or one coming from a replication.\n\nHow can I only update my metrics when the RefUpdatedEvent is coming from another node?\n\nRefUpdatedEvent doesn\u0027t contain the instanceId...none of the events does.\n\nThe replication.RefReplicatedEvent contains the target node, so I could probably find a way to use it, but the replication-status plugin will have to depend from the replication plugin, isn\u0027t it?\n\nAny idea on how I can fix it?",
+      "range": {
+        "startLine": 33,
+        "startChar": 3,
+        "endLine": 42,
+        "endChar": 5
+      },
+      "revId": "e2b342bfe8d7b60bad7ef0ce903adcab0c5236da",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
