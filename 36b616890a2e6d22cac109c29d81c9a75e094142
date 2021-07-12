@@ -16,6 +16,24 @@
       "message": "This is ready for an initial round of review.\n\nI am targeting stable-3.2 for this, however the branch still doesn\u0027t exist.\n\nIf you want to test this out, please build it against 3.2 for now.\n",
       "revId": "36b616890a2e6d22cac109c29d81c9a75e094142",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc120f8c_c630ef02",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-12T11:00:29Z",
+      "side": 1,
+      "message": "Done: moved to stable-3.2",
+      "parentUuid": "11fe90a4_e5fb17f9",
+      "revId": "36b616890a2e6d22cac109c29d81c9a75e094142",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
