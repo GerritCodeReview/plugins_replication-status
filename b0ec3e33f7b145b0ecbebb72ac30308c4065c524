@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "092cdabf_258950f4",
+        "filename": ".gitignore",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-13T18:29:48Z",
+      "side": 1,
+      "message": "nit: quite exotic exclusion considering that this is a Gerrit plugin :D",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "03ff761b_ad1ef261",
         "filename": "README.md",
         "patchSetId": 7
@@ -180,6 +203,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f1433a8c_f8b9bf04",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-13T18:29:48Z",
+      "side": 1,
+      "message": "I might not fully understand it so sorry for the confusion but AFAIK project can be replicated to multiple nodes and in current implementation one would know that replication failed but it will not be clear to which node... I would consider adding RefReplicatedEvent.targetNode to the RefReplicationStatus.Key so that this information is exposed. Unless you guys already talked it through and decided that this is not needed ;)",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7359da93_0d25212c",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 7
@@ -242,6 +282,29 @@
       "range": {
         "startLine": 41,
         "startChar": 6,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6564366_ad8d0dc1",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-13T18:29:48Z",
+      "side": 1,
+      "message": "nit: would name exactly as class member \u0027nodeInstanceId\u0027",
+      "range": {
+        "startLine": 41,
+        "startChar": 31,
         "endLine": 41,
         "endChar": 41
       },
@@ -386,6 +449,52 @@
         "startChar": 83,
         "endLine": 62,
         "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3bbff31_a10931b4",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/RefReplicationStatus.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-13T18:29:48Z",
+      "side": 1,
+      "message": "nit: consider adding \u0027@Memoized\u0027 so that it is not calculated over and over again when called multiple times",
+      "range": {
+        "startLine": 34,
+        "startChar": 2,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8f7319d_1cd1e436",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/RemoteReplicationStatus.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-13T18:29:48Z",
+      "side": 1,
+      "message": "nit: AFAICT it is used to satisfy the following case:\n\n  case \"not-attempted\":\n    return NOT_ATTEMPTED;\n\nI believe it could be skipped if case is turned to `case \"not_attempted\"` ;)",
+      "range": {
+        "startLine": 45,
+        "startChar": 35,
+        "endLine": 45,
+        "endChar": 52
       },
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
@@ -551,6 +660,29 @@
         "startChar": 9,
         "endLine": 28,
         "endChar": 18
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bad0137_d987b0a5",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusCacheModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-13T18:29:48Z",
+      "side": 1,
+      "message": "nit: I would probably mentioned what is the default cache size in config.md",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 27
       },
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
