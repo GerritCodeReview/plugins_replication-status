@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9cf5fe08_1102ab01",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "that information is not in the event message though, it might be tricky.\nDo you have any suggestion?",
+      "parentUuid": "03ff761b_ad1ef261",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3c6ca6a_efd5f2c5",
         "filename": "README.md",
         "patchSetId": 7
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-13T14:57:19Z",
       "side": 1,
       "message": "Is this the time of the last success or when it failed?",
+      "range": {
+        "startLine": 68,
+        "startChar": 11,
+        "endLine": 68,
+        "endChar": 15
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbbd14be_c5189538",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "it is the time when it failed.",
+      "parentUuid": "c3c6ca6a_efd5f2c5",
       "range": {
         "startLine": 68,
         "startChar": 11,
@@ -66,6 +114,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7a5b530_39b65d08",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "true I will add that",
+      "parentUuid": "42fa008f_b42ddfcd",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7359da93_0d25212c",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 7
@@ -77,6 +143,30 @@
       "writtenOn": "2021-07-13T14:57:19Z",
       "side": 1,
       "message": "A prerequisite for this is the GerritInstanceId to be defined. In the doc we are saying the plugin would not load. I thought the value injected would be null, but the plugin would still be able to load",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77269202_77759538",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "unless you specify @nullable, guice will not do the binding, when it\u0027s null",
+      "parentUuid": "7359da93_0d25212c",
       "range": {
         "startLine": 41,
         "startChar": 6,
@@ -112,6 +202,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0b6dd5fc_2b542b1d",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "The latter is the successful replication of a ref *to all remotes*.\nthe former is the successful replication of a ref to *one specific* remote.\n\nBecause we have the payload showing the refs _per remote_ this is the one we consume.\n\nHope it makes sense.",
+      "parentUuid": "32df19ca_7993a1b2",
+      "range": {
+        "startLine": 49,
+        "startChar": 27,
+        "endLine": 49,
+        "endChar": 45
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3cdab0bf_8ed35277",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 7
@@ -135,6 +249,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0dcfe0a9_60c54075",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "it\u0027s a good point, I also question the same.\n\nAs soon as the replication is done, the event is triggered, so they are (mostly) aligned.\n\nI tried to think of some scenario where the events cannot be triggered immediately, but I could\u0027t find any.\n\nCan you think of some scenarios in which they might differ?",
+      "parentUuid": "3cdab0bf_8ed35277",
+      "range": {
+        "startLine": 62,
+        "startChar": 83,
+        "endLine": 62,
+        "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "78349ef5_3114acfb",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
         "patchSetId": 7
@@ -146,6 +284,30 @@
       "writtenOn": "2021-07-13T14:57:19Z",
       "side": 1,
       "message": "checkIsOwnerOrAdmin?",
+      "range": {
+        "startLine": 100,
+        "startChar": 15,
+        "endLine": 100,
+        "endChar": 27
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cce43344_a86de3d5",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "yep, will change",
+      "parentUuid": "78349ef5_3114acfb",
       "range": {
         "startLine": 100,
         "startChar": 15,
@@ -204,6 +366,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d809d99f_6354ce4c",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusCacheModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "will remove",
+      "parentUuid": "9fdd2567_39c36c3f",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 3
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f3f2632_43fe0967",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusCacheModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "it already is, these are just the defaults but they could be overridden by setting the relevant [cache] section.\n\nI will provide more docs.",
+      "parentUuid": "ff975b13_b3092e32",
+      "range": {
+        "startLine": 28,
+        "startChar": 9,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4a376f0b_31da06e8",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusCacheModule.java",
         "patchSetId": 7
@@ -227,6 +437,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "267cc9da_04afbfc4",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusCacheModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "Will remove.",
+      "parentUuid": "4a376f0b_31da06e8",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 67
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "57fc943b_854f598f",
         "filename": "src/test/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
         "patchSetId": 7
@@ -238,6 +472,24 @@
       "writtenOn": "2021-07-13T14:57:19Z",
       "side": 1,
       "message": "since \"instanceId\" is a prerequisite shall we add a test that checks the plugin doesn\u0027t load if instanceId is not defined ?",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9771c314_2c3cf8a1",
+        "filename": "src/test/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-13T15:05:05Z",
+      "side": 1,
+      "message": "mmm, perhaps it\u0027s a good idea, let me do that.",
+      "parentUuid": "57fc943b_854f598f",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
