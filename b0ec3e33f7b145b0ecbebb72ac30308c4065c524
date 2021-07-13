@@ -48,6 +48,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a78588c7_c8a9afc3",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-13T15:11:23Z",
+      "side": 1,
+      "message": "true, I didn\u0027t think about it.",
+      "parentUuid": "9cf5fe08_1102ab01",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3c6ca6a_efd5f2c5",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "it is the time when it failed.",
       "parentUuid": "c3c6ca6a_efd5f2c5",
+      "range": {
+        "startLine": 68,
+        "startChar": 11,
+        "endLine": 68,
+        "endChar": 15
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05ae07c9_082583d9",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-13T15:11:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dbbd14be_c5189538",
       "range": {
         "startLine": 68,
         "startChar": 11,
@@ -177,6 +225,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07d68dc1_ae1fd889",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-13T15:11:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "77269202_77759538",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32df19ca_7993a1b2",
@@ -224,6 +296,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de724cfa_9cc3e69c",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-13T15:11:23Z",
+      "side": 1,
+      "message": "makes sense",
+      "parentUuid": "0b6dd5fc_2b542b1d",
+      "range": {
+        "startLine": 49,
+        "startChar": 27,
+        "endLine": 49,
+        "endChar": 45
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3cdab0bf_8ed35277",
@@ -261,6 +357,30 @@
       "side": 1,
       "message": "it\u0027s a good point, I also question the same.\n\nAs soon as the replication is done, the event is triggered, so they are (mostly) aligned.\n\nI tried to think of some scenario where the events cannot be triggered immediately, but I could\u0027t find any.\n\nCan you think of some scenarios in which they might differ?",
       "parentUuid": "3cdab0bf_8ed35277",
+      "range": {
+        "startLine": 62,
+        "startChar": 83,
+        "endLine": 62,
+        "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ae03350_5498be44",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-13T15:11:23Z",
+      "side": 1,
+      "message": "mmm..I can\u0027t think if any scenario. And now that I think about that is not big deal if it is not perfectly aligned.",
+      "parentUuid": "0dcfe0a9_60c54075",
       "range": {
         "startLine": 62,
         "startChar": 83,
@@ -402,6 +522,30 @@
       "side": 1,
       "message": "it already is, these are just the defaults but they could be overridden by setting the relevant [cache] section.\n\nI will provide more docs.",
       "parentUuid": "ff975b13_b3092e32",
+      "range": {
+        "startLine": 28,
+        "startChar": 9,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "366daf21_5f41e2d4",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusCacheModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-13T15:11:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9f3f2632_43fe0967",
       "range": {
         "startLine": 28,
         "startChar": 9,
