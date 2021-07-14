@@ -26,6 +26,121 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e45aba58_d7b8540e",
+        "filename": "BUILD",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "Gerrit plugins typically have the package com.googlesource.*",
+      "range": {
+        "startLine": 14,
+        "startChar": 24,
+        "endLine": 14,
+        "endChar": 39
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4659b383_176036b4",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "I believe this is the aggregation of the replication of each refs. Can we start possibly with the finer-grained REST-API example?\n\n\u003cgerrit-server\u003e/a/projects/\u003cproject-name\u003e/ref/\u003cref-name\u003e/replication-status",
+      "range": {
+        "startLine": 16,
+        "startChar": 22,
+        "endLine": 16,
+        "endChar": 83
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f58040cb_b75c7863",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "ref",
+      "range": {
+        "startLine": 23,
+        "startChar": 3,
+        "endLine": 23,
+        "endChar": 13
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "876c46cb_91c5c38c",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "is this needed?",
+      "range": {
+        "startLine": 25,
+        "startChar": 7,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "369b957a_8e56f87f",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "Those are not very typical destination URLs for a README.md",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 37
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "03ff761b_ad1ef261",
         "filename": "README.md",
         "patchSetId": 7
@@ -97,6 +212,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d26d8b92_c49045bf",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "I\u0027d avoid using this ref in the example, as it isn\u0027t really typical.",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 32
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c3c6ca6a_efd5f2c5",
         "filename": "README.md",
         "patchSetId": 7
@@ -161,6 +299,29 @@
         "startChar": 11,
         "endLine": 68,
         "endChar": 15
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79eec702_74f4f16e",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "Isn\u0027t this already represented by the HTTP status code as the global result?",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 21
       },
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
@@ -314,6 +475,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "38efa458_ab72b62d",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "Why is a pre-requisite? I would be in a primary-replica configuration and not need to have any instance-id defined. I am expecting this plugin to still be used even if I don\u0027t have an instance-id, isn\u0027t it?",
+      "parentUuid": "07d68dc1_ae1fd889",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "32df19ca_7993a1b2",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 7
@@ -385,6 +570,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c857e60c_a6763ca5",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "I believe the remote also should be in the cache-key",
+      "range": {
+        "startLine": 53,
+        "startChar": 44,
+        "endLine": 53,
+        "endChar": 94
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37e353a2_ddc1490c",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "The cache already manages the key-values. If you put the remote in the cache-key, we should not need this extra map to manage.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3cdab0bf_8ed35277",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 7
@@ -449,6 +680,53 @@
         "startChar": 83,
         "endLine": 62,
         "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a609935b_78288fac",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "By using an HashMap you open the door to concurrency issues when two remotes are reporting concurrently their statuses. If you add the remote in the cache key, you avoid the concurrency issues.",
+      "parentUuid": "5ae03350_5498be44",
+      "range": {
+        "startLine": 62,
+        "startChar": 83,
+        "endLine": 62,
+        "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b0168da_4bc68baf",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/JavaCacheSerializer.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "This would break when the object is evolved. Can we use something more compatible instead?",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 63
       },
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
@@ -543,6 +821,23 @@
         "endLine": 100,
         "endChar": 27
       },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa85ff53_256d50a0",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusApiModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "I am missing the one associated with the individual ref",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -737,6 +1032,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3520a7f4_bdeb5a19",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "bazelisk",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 7
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31c7cf92_511fa68a",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "This isn\u0027t relevant to this plugin. If you have Gerrit instance-id configured, the replication-status can use it, otherwise it should be able to work without it.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "57fc943b_854f598f",
         "filename": "src/test/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
         "patchSetId": 7
@@ -766,6 +1107,24 @@
       "side": 1,
       "message": "mmm, perhaps it\u0027s a good idea, let me do that.",
       "parentUuid": "57fc943b_854f598f",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c805b3ce_06e0d326",
+        "filename": "src/test/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T01:04:15Z",
+      "side": 1,
+      "message": "I disagree on the instance-id being mandatory.",
+      "parentUuid": "9771c314_2c3cf8a1",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
