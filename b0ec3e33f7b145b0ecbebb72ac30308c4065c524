@@ -142,6 +142,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78576521_38c94ead",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9918d9e9_24f2c2a7",
+      "range": {
+        "startLine": 16,
+        "startChar": 22,
+        "endLine": 16,
+        "endChar": 83
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f58040cb_b75c7863",
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "We could remove it I guess, but I\u0027d like to keep it to be honest:\n\n- I think it is more descriptive than not having it.\n- It allows a OOTB serialization of the value classes that encapsulate the status, so that we don\u0027t have to write a custom serializer.\n- It is easier to evolve, since it allows to introduce sibling keys in the future.\n\nUnless you feel strongly about this, I\u0027d like to keep this structure",
       "parentUuid": "876c46cb_91c5c38c",
+      "range": {
+        "startLine": 25,
+        "startChar": 7,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8335b548_afea1cf2",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5437523f_14080b4c",
       "range": {
         "startLine": 25,
         "startChar": 7,
@@ -519,6 +567,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39e19695_45c7f3ec",
+        "filename": "README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "997996a9_a6479c95",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 21
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42fa008f_b42ddfcd",
@@ -603,6 +675,24 @@
       "side": 1,
       "message": "\u003e I might not fully understand it so sorry for the confusion but AFAIK project can be replicated to multiple nodes and in current implementation one would know that replication failed but it will not be clear to which node... \n\nI believe it would.\nLook at this excerpt from the README.md.\n\n```\n    \"refs/changes/21/121/meta\": {\n      \"remote_status\": {\n        \"https://github.com/some/project.git\": {\n          \"status\": \"SUCCEEDED\",\n          \"when\": 1625756932\n        },\n        \"ssh://mirror.com/some/project.git\": {\n          \"status\": \"SUCCEEDED\",\n          \"when\": 1625756932\n        },\n        \"https://mirror2.com/some/project.git\": {\n          \"status\": \"FAILED\",\n          \"when\": 1625756932\n        }\n      }\n    },\n```\n\nstatuses are exposed by \u0027targetNode\u0027, so that you can see for which remotes it was successful and for which it wasn\u0027t.\n\nIs this what you mean @jacek?\n\n\n\u003e I would consider adding RefReplicatedEvent.targetNode to the RefReplicationStatus.Key so that this information is exposed. Unless you guys already talked it through and decided that this is not needed ;)",
       "parentUuid": "f1433a8c_f8b9bf04",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33240900_fe6f1c28",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "I would agree with Jacek that the target node should be in the key.",
+      "parentUuid": "2dbe9d73_a08c3d59",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -766,6 +856,30 @@
       "range": {
         "startLine": 41,
         "startChar": 31,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f944ebe_6992d12d",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Yes, exactly. If you are multi-site, the instance-id is mandatory and therefore you have it anyway.\n\nIf you are not multi-site, you don\u0027t need instance-id after all.",
+      "parentUuid": "e3130d2d_36bb6647",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
         "endLine": 41,
         "endChar": 41
       },
@@ -940,6 +1054,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5be4cc90_78894ded",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Not for *ALL* remotes but just the ones associated with that repository, isn\u0027t it? On GerritHub for instance we have 40k repositories and 15k remotes, but that doesn\u0027t mean that all repositories are replicated against all remotes.",
+      "parentUuid": "d0f1a12f_16c4cdb4",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3cdab0bf_8ed35277",
         "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 7
@@ -1047,6 +1185,30 @@
       "side": 1,
       "message": "If the remote was part of the cache key, how would the caller know which remotes to query for?\n\nIf we wanted to go this way, then the caller would need to _explicitly_ query for a specific remote in the REST API right?\n\nAlternatively we would need to loop through all remotes (as well as all refs) to provide an aggregated view at project level.\n\nIs this what you had in mind?",
       "parentUuid": "a609935b_78288fac",
+      "range": {
+        "startLine": 62,
+        "startChar": 83,
+        "endLine": 62,
+        "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44a38f87_0725b3d4",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Let\u0027s brainstorm on that.\n\n@Ponch that is the time when the event has been created in memory, which corresponds to when the action has *finished*.",
+      "parentUuid": "0d5cb2c8_766f169b",
       "range": {
         "startLine": 62,
         "startChar": 83,
@@ -1324,6 +1486,24 @@
       "side": 1,
       "message": "Follow-up change?\nThis change is already way bigger that I would have liked to 😞",
       "parentUuid": "fa85ff53_256d50a0",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "977df0b7_957801b3",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusApiModule.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6904af28_5f713943",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -1725,6 +1905,24 @@
       "side": 1,
       "message": "Without instanceId, how would this plugin know the replication event was originated by the current node, rather than by another node?",
       "parentUuid": "c805b3ce_06e0d326",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "189c49b1_1c0b6b1a",
+        "filename": "src/test/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-14T23:39:35Z",
+      "side": 1,
+      "message": "See the discussion above: yes, you are right, we should use it when it is there (e.g. multi-site scenario) but we should not require and not test it when it isn\u0027t.",
+      "parentUuid": "758747e1_8cca4da6",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
