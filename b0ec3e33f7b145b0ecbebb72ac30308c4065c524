@@ -905,6 +905,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "862afa8f_5771a304",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T20:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f944ebe_6992d12d",
+      "range": {
+        "startLine": 41,
+        "startChar": 6,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32df19ca_7993a1b2",
@@ -1928,6 +1952,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc76283c_8c5319d6",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T20:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31c7cf92_511fa68a",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "57fc943b_854f598f",
@@ -2013,6 +2061,24 @@
       "side": 1,
       "message": "See the discussion above: yes, you are right, we should use it when it is there (e.g. multi-site scenario) but we should not require and not test it when it isn\u0027t.",
       "parentUuid": "758747e1_8cca4da6",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a969d58_30e48c16",
+        "filename": "src/test/java/com/gerritforge/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T20:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "189c49b1_1c0b6b1a",
       "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
