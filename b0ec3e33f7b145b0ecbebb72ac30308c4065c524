@@ -697,6 +697,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e11ca955_60d6554e",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T19:50:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33240900_fe6f1c28",
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7359da93_0d25212c",
@@ -1005,6 +1023,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67c1ece4_9ff3af03",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T19:50:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d42bbbfb_e9d800a3",
+      "range": {
+        "startLine": 53,
+        "startChar": 44,
+        "endLine": 53,
+        "endChar": 94
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37e353a2_ddc1490c",
@@ -1066,6 +1108,30 @@
       "side": 1,
       "message": "Not for *ALL* remotes but just the ones associated with that repository, isn\u0027t it? On GerritHub for instance we have 40k repositories and 15k remotes, but that doesn\u0027t mean that all repositories are replicated against all remotes.",
       "parentUuid": "d0f1a12f_16c4cdb4",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 41
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f98f4124_6a150f87",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T19:50:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5be4cc90_78894ded",
       "range": {
         "startLine": 55,
         "startChar": 0,
@@ -1209,6 +1275,30 @@
       "side": 1,
       "message": "Let\u0027s brainstorm on that.\n\n@Ponch that is the time when the event has been created in memory, which corresponds to when the action has *finished*.",
       "parentUuid": "0d5cb2c8_766f169b",
+      "range": {
+        "startLine": 62,
+        "startChar": 83,
+        "endLine": 62,
+        "endChar": 97
+      },
+      "revId": "b0ec3e33f7b145b0ecbebb72ac30308c4065c524",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "225c87ca_63e943a6",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-15T19:50:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "44a38f87_0725b3d4",
       "range": {
         "startLine": 62,
         "startChar": 83,
