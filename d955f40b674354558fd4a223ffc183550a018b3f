@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43c92a20_4f806474",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "Do you recogn we might need some pagination in place ? I am thinking about repos of with refs in the order of hundred thousands. That would potentially created a huge payload. It can be part of a follow up if needed.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 7
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67e5f7f2_0a3d476e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "I imagine this would be the case of a setup with replication plugin, not using the multi-site. \n\nIn this case we would expose on all the node metrics containing the last RefReplicatedEvent information, regardless the node it has been produced, right?\n\nI wonder if it would be useful at all in this case? Or I am missing something ?",
+      "range": {
+        "startLine": 62,
+        "startChar": 11,
+        "endLine": 62,
+        "endChar": 61
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "519dfc42_61468f71",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ProjectReplicationStatus.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "RemoteReplicationStatus and ProjectReplicationStatusResult, why one has the result suffix and the other no? Shall we make them consistent?",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 36
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3164a242_3952fdc0",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "what about extracting this into a DEFAULT_REMOTE_NAME_STYLE constant?",
+      "range": {
+        "startLine": 59,
+        "startChar": 85,
+        "endLine": 59,
+        "endChar": 90
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95ffba9b_af957393",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "Can\u0027t we always do the encoding? Worst case would be a noop isn\u0027t it?",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 5
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88651de5_a146885f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "1) If it is \"slash\" we don\u0027t have any substitution to do?\n2) If it is NOT \"slash\" it means we are in an unexpected state, shall we log it?",
+      "range": {
+        "startLine": 86,
+        "startChar": 6,
+        "endLine": 87,
+        "endChar": 5
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2a25136_8fcecc8f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "Could also be \"file\" the prefix?",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 3
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "505e87cc_a894fb14",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "singleProject ?",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 121,
+        "endChar": 15
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "225bb31b_6b49a56d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "may ?",
+      "range": {
+        "startLine": 128,
+        "startChar": 70,
+        "endLine": 128,
+        "endChar": 74
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18e6812a_81921784",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatus.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-16T14:07:27Z",
+      "side": 1,
+      "message": "is UNKNOWN to consider a failure as well ?",
+      "range": {
+        "startLine": 119,
+        "startChar": 19,
+        "endLine": 119,
+        "endChar": 28
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
