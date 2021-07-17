@@ -26,6 +26,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3214793b_ade8e911",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-17T02:11:45Z",
+      "side": 1,
+      "message": "This isn\u0027t good IMHO: how can I differentiate between \"Is the plugin working?\" from \"Is the replication successful?\"\n\nI would always return 200 if we managed to return the status, what do you think? Bear in mind that is very likely that the replication for one of the refs would have some issues so the API would return 500 for most of the times, which is very weird for an expected behaviour.",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 66
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a2bb417_7de992de",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-17T02:11:45Z",
+      "side": 1,
+      "message": "What about ReplicationScheduledEvent?",
+      "range": {
+        "startLine": 45,
+        "startChar": 27,
+        "endLine": 45,
+        "endChar": 45
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "67e5f7f2_0a3d476e",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 12
@@ -37,6 +83,30 @@
       "writtenOn": "2021-07-16T14:07:27Z",
       "side": 1,
       "message": "I imagine this would be the case of a setup with replication plugin, not using the multi-site. \n\nIn this case we would expose on all the node metrics containing the last RefReplicatedEvent information, regardless the node it has been produced, right?\n\nI wonder if it would be useful at all in this case? Or I am missing something ?",
+      "range": {
+        "startLine": 62,
+        "startChar": 11,
+        "endLine": 62,
+        "endChar": 61
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6682b933_3ec7cd84",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-17T02:11:45Z",
+      "side": 1,
+      "message": "\u003e I imagine this would be the case of a setup with replication plugin, not using the multi-site. \n\u003e \n\u003e In this case we would expose on all the node metrics containing the last RefReplicatedEvent information, regardless the node it has been produced, right?\n\nIf you are not in multi-site, there is just one node, isn\u0027t it?",
+      "parentUuid": "67e5f7f2_0a3d476e",
       "range": {
         "startLine": 62,
         "startChar": 11,
@@ -64,6 +134,29 @@
         "startLine": 24,
         "startChar": 6,
         "endLine": 24,
+        "endChar": 36
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6968a067_a4f5349f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-07-17T02:11:45Z",
+      "side": 1,
+      "message": "I am wondering if it would make sense to just get the config already parsed from the replication plugin? Bear in mind that remotes can be also defined in one remote per config file, so it is way more complex that this :-(",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
         "endChar": 36
       },
       "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
