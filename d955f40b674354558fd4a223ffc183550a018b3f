@@ -119,6 +119,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97a28b0d_ffe1398f",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T14:27:45Z",
+      "side": 1,
+      "message": "Done.\n\nNow the endpoint will return 200 OK even if some refs failed.\nThe overall status can still be found in the payload \u0027status\u0027 field.",
+      "parentUuid": "7f3e0b89_10fc6a6f",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 66
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a2bb417_7de992de",
@@ -746,6 +770,30 @@
       "side": 1,
       "message": "Perhaps we shouldn\u0027t model UNKNOWN at all and just thrown a exception if we can\u0027t map the replication status.\n\nWDYT?",
       "parentUuid": "18e6812a_81921784",
+      "range": {
+        "startLine": 119,
+        "startChar": 19,
+        "endLine": 119,
+        "endChar": 28
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c448337_bdba4de2",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatus.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T14:27:45Z",
+      "side": 1,
+      "message": "Done, this should never happend.\nIf it does we want to have visibility on it.",
+      "parentUuid": "42ca9e89_0402f5cf",
       "range": {
         "startLine": 119,
         "startChar": 19,
