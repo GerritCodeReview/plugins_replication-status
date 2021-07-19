@@ -72,6 +72,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18e9de87_d2531a02",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T14:28:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "79ea7c0e_5bf19205",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 7
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3214793b_ade8e911",
@@ -299,6 +323,30 @@
       "side": 1,
       "message": "Makes sense now. No need to further explain it.",
       "parentUuid": "c77e9e35_c16fa0fd",
+      "range": {
+        "startLine": 62,
+        "startChar": 11,
+        "endLine": 62,
+        "endChar": 61
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a13bae2_c5a0109b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T14:28:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "41585436_a1a970e5",
       "range": {
         "startLine": 62,
         "startChar": 11,
