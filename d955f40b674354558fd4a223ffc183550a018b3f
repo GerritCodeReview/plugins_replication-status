@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "79ea7c0e_5bf19205",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-19T14:27:13Z",
+      "side": 1,
+      "message": "Good point it is not unbounded, hence ti shouldn\u0027t be an issue.",
+      "parentUuid": "8ef5a17a_19849775",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 7
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3214793b_ade8e911",
         "filename": "README.md",
         "patchSetId": 12
@@ -227,6 +251,30 @@
       "side": 1,
       "message": "Exactly,\nthe rationale is that, this should be the scenario:\n- When there\u0027s more that one node involved, then we are in multi-site and instance-id must be set.\n- When instance-id is not set, then we are the only node, so we should be rightfully consume all events.\n\nI am happy to explain this more in detail if you think it is useful.\ncomment?\nDocs?\n\n@ponch Does it make sense?",
       "parentUuid": "6682b933_3ec7cd84",
+      "range": {
+        "startLine": 62,
+        "startChar": 11,
+        "endLine": 62,
+        "endChar": 61
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41585436_a1a970e5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-19T14:27:13Z",
+      "side": 1,
+      "message": "Makes sense now. No need to further explain it.",
+      "parentUuid": "c77e9e35_c16fa0fd",
       "range": {
         "startLine": 62,
         "startChar": 11,
