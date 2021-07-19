@@ -284,6 +284,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3957b0d_4b11d462",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ProjectReplicationStatus.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:41:05Z",
+      "side": 1,
+      "message": "I had already fixed this without realizing. resolving.",
+      "parentUuid": "700f9145_f4f280f6",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 36
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6968a067_a4f5349f",
