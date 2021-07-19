@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7f3e0b89_10fc6a6f",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:21:12Z",
+      "side": 1,
+      "message": "Yes, good point, let me do that.",
+      "parentUuid": "3214793b_ade8e911",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 66
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0a2bb417_7de992de",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
         "patchSetId": 12
@@ -60,6 +84,30 @@
       "writtenOn": "2021-07-17T02:11:45Z",
       "side": 1,
       "message": "What about ReplicationScheduledEvent?",
+      "range": {
+        "startLine": 45,
+        "startChar": 27,
+        "endLine": 45,
+        "endChar": 45
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4068c1e2_d36e1b85",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:21:12Z",
+      "side": 1,
+      "message": "oh yes, I thought about it and I agree it would be useful not just about the current status, but that there is a scheduled replication in progress (which should be considered as successfu towards the overall status).\n\nI suggest we do this as a follow up change, if that\u0027s OK.\n\nI\u0027ll create the relevant monorail ticket.",
+      "parentUuid": "0a2bb417_7de992de",
       "range": {
         "startLine": 45,
         "startChar": 27,
@@ -119,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c77e9e35_c16fa0fd",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:21:12Z",
+      "side": 1,
+      "message": "Exactly,\nthe rationale is that, this should be the scenario:\n- When there\u0027s more that one node involved, then we are in multi-site and instance-id must be set.\n- When instance-id is not set, then we are the only node, so we should be rightfully consume all events.\n\nI am happy to explain this more in detail if you think it is useful.\ncomment?\nDocs?\n\n@ponch Does it make sense?",
+      "parentUuid": "6682b933_3ec7cd84",
+      "range": {
+        "startLine": 62,
+        "startChar": 11,
+        "endLine": 62,
+        "endChar": 61
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "519dfc42_61468f71",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ProjectReplicationStatus.java",
         "patchSetId": 12
@@ -165,6 +237,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "33b70098_ddfe7504",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:21:12Z",
+      "side": 1,
+      "message": "very true!\nAs discussed f2f Let\u0027s separate the look up of the replication remote from this ticket, so that we can address it properly, the task is quite complex on its own and it would bloat this already big CR.\n\nI\u0027ll create a monorail ticket for it",
+      "parentUuid": "6968a067_a4f5349f",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
+        "endChar": 36
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3164a242_3952fdc0",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
         "patchSetId": 12
@@ -176,6 +272,30 @@
       "writtenOn": "2021-07-16T14:07:27Z",
       "side": 1,
       "message": "what about extracting this into a DEFAULT_REMOTE_NAME_STYLE constant?",
+      "range": {
+        "startLine": 59,
+        "startChar": 85,
+        "endLine": 59,
+        "endChar": 90
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bad1811a_0352a695",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:21:12Z",
+      "side": 1,
+      "message": "I have removed the parsing of the replication.config from this change, so this is now obsolete.\n\nResolving.",
+      "parentUuid": "3164a242_3952fdc0",
       "range": {
         "startLine": 59,
         "startChar": 85,
@@ -268,6 +388,30 @@
       "writtenOn": "2021-07-16T14:07:27Z",
       "side": 1,
       "message": "singleProject ?",
+      "range": {
+        "startLine": 121,
+        "startChar": 12,
+        "endLine": 121,
+        "endChar": 15
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d2d7970_6e92e5a5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:21:12Z",
+      "side": 1,
+      "message": "I have removed the parsing of the replication.config from this change, so this is now obsolete.\n\nResolving.",
+      "parentUuid": "505e87cc_a894fb14",
       "range": {
         "startLine": 121,
         "startChar": 12,
