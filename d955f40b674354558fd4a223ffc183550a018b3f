@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8ef5a17a_19849775",
+        "filename": "README.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "it\u0027s a good point, I am not sure.\nFor the analytics endpoint (which can also expose unbounded response payload), we used a \"stream\", if I am not mistaken.\n\nIt is also true, that the size of the payload can be \"controlled\" by setting cache eviction expiration times (or size) so that the payload does not grow unboundedly.\n\nWDYT?",
+      "parentUuid": "43c92a20_4f806474",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 7
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3214793b_ade8e911",
         "filename": "README.md",
         "patchSetId": 12
@@ -108,6 +132,30 @@
       "side": 1,
       "message": "oh yes, I thought about it and I agree it would be useful not just about the current status, but that there is a scheduled replication in progress (which should be considered as successfu towards the overall status).\n\nI suggest we do this as a follow up change, if that\u0027s OK.\n\nI\u0027ll create the relevant monorail ticket.",
       "parentUuid": "0a2bb417_7de992de",
+      "range": {
+        "startLine": 45,
+        "startChar": 27,
+        "endLine": 45,
+        "endChar": 45
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e5ef77d_8a672113",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Captured in:\nhttps://bugs.chromium.org/p/gerrit/issues/detail?id\u003d14133",
+      "parentUuid": "4068c1e2_d36e1b85",
       "range": {
         "startLine": 45,
         "startChar": 27,
@@ -214,6 +262,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "700f9145_f4f280f6",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ProjectReplicationStatus.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Ack, let me fix this.",
+      "parentUuid": "519dfc42_61468f71",
+      "range": {
+        "startLine": 24,
+        "startChar": 6,
+        "endLine": 24,
+        "endChar": 36
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6968a067_a4f5349f",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
         "patchSetId": 12
@@ -249,6 +321,30 @@
       "side": 1,
       "message": "very true!\nAs discussed f2f Let\u0027s separate the look up of the replication remote from this ticket, so that we can address it properly, the task is quite complex on its own and it would bloat this already big CR.\n\nI\u0027ll create a monorail ticket for it",
       "parentUuid": "6968a067_a4f5349f",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
+        "endChar": 36
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d87ca4c3_fc632097",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Captured in:\nhttps://bugs.chromium.org/p/gerrit/issues/detail?id\u003d14803",
+      "parentUuid": "33b70098_ddfe7504",
       "range": {
         "startLine": 38,
         "startChar": 13,
@@ -329,6 +425,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12b5ee30_ef2571be",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Removed, no longer relevant.",
+      "parentUuid": "95ffba9b_af957393",
+      "range": {
+        "startLine": 77,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 5
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88651de5_a146885f",
@@ -352,6 +472,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80bf6f28_051c3612",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Removed, no longer relevant.",
+      "parentUuid": "88651de5_a146885f",
+      "range": {
+        "startLine": 86,
+        "startChar": 6,
+        "endLine": 87,
+        "endChar": 5
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2a25136_8fcecc8f",
@@ -365,6 +509,30 @@
       "writtenOn": "2021-07-16T14:07:27Z",
       "side": 1,
       "message": "Could also be \"file\" the prefix?",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 3
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa646baa_e778782e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Removed, no longer relevant.",
+      "parentUuid": "e2a25136_8fcecc8f",
       "range": {
         "startLine": 110,
         "startChar": 2,
@@ -445,6 +613,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1685eb3_ab11ac25",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationConfigParser.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Removed this, so no longer relevant.",
+      "parentUuid": "225bb31b_6b49a56d",
+      "range": {
+        "startLine": 128,
+        "startChar": 70,
+        "endLine": 128,
+        "endChar": 74
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "18e6812a_81921784",
@@ -458,6 +650,30 @@
       "writtenOn": "2021-07-16T14:07:27Z",
       "side": 1,
       "message": "is UNKNOWN to consider a failure as well ?",
+      "range": {
+        "startLine": 119,
+        "startChar": 19,
+        "endLine": 119,
+        "endChar": 28
+      },
+      "revId": "d955f40b674354558fd4a223ffc183550a018b3f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42ca9e89_0402f5cf",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatus.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-19T13:36:58Z",
+      "side": 1,
+      "message": "Perhaps we shouldn\u0027t model UNKNOWN at all and just thrown a exception if we can\u0027t map the replication status.\n\nWDYT?",
+      "parentUuid": "18e6812a_81921784",
       "range": {
         "startLine": 119,
         "startChar": 19,
