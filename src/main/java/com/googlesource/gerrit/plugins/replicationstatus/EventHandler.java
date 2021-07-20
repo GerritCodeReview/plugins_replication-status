@@ -18,17 +18,20 @@ import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatu
 
 import com.google.common.cache.Cache;
 import com.google.gerrit.common.Nullable;
-import com.google.gerrit.entities.Project;
 import com.google.gerrit.server.config.GerritInstanceId;
 import com.google.gerrit.server.events.Event;
 import com.google.gerrit.server.events.EventListener;
+import com.google.gerrit.server.events.RefEvent;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.googlesource.gerrit.plugins.replication.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.ReplicationScheduledEvent;
 
 class EventHandler implements EventListener {
   private final Cache<ReplicationStatus.Key, ReplicationStatus> replicationStatusCache;
   private final String nodeInstanceId;
+
+  public static final String SCHEDULED_REPLICATION = "scheduled";
 
   @Inject
   EventHandler(
@@ -44,17 +47,23 @@ class EventHandler implements EventListener {
     if (shouldConsume(event)) {
       if (event instanceof RefReplicatedEvent) {
         RefReplicatedEvent replEvent = (RefReplicatedEvent) event;
-
-        ReplicationStatus.Key cacheKey =
-            ReplicationStatus.Key.create(
-                Project.nameKey(replEvent.project), replEvent.targetNode, replEvent.ref);
-
-        replicationStatusCache.put(
-            cacheKey,
-            ReplicationStatus.create(
-                ReplicationStatusResult.fromString(replEvent.status), replEvent.eventCreatedOn));
+        putCacheEntry(replEvent, replEvent.targetNode, replEvent.status);
+      } else if (event instanceof ReplicationScheduledEvent) {
+        ReplicationScheduledEvent replEvent = (ReplicationScheduledEvent) event;
+        putCacheEntry(replEvent, replEvent.targetNode, SCHEDULED_REPLICATION);
       }
     }
+  }
+
+  private <T extends RefEvent> void putCacheEntry(T refEvent, String targetNode, String status) {
+    ReplicationStatus.Key cacheKey =
+        ReplicationStatus.Key.create(
+            refEvent.getProjectNameKey(), targetNode, refEvent.getRefName());
+
+    replicationStatusCache.put(
+        cacheKey,
+        ReplicationStatus.create(
+            ReplicationStatusResult.fromString(status), refEvent.eventCreatedOn));
   }
 
   private boolean shouldConsume(Event event) {

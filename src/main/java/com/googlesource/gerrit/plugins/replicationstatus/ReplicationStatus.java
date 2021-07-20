@@ -14,6 +14,8 @@
 
 package com.googlesource.gerrit.plugins.replicationstatus;
 
+import static com.googlesource.gerrit.plugins.replicationstatus.EventHandler.SCHEDULED_REPLICATION;
+
 import com.google.auto.value.AutoValue;
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.entities.Project;
@@ -99,6 +101,7 @@ public abstract class ReplicationStatus {
     FAILED,
     NOT_ATTEMPTED,
     SUCCEEDED,
+    SCHEDULED,
     UNKNOWN;
 
     static ReplicationStatusResult fromString(String result) {
@@ -107,6 +110,8 @@ public abstract class ReplicationStatus {
           return SUCCEEDED;
         case "not_attempted":
           return NOT_ATTEMPTED;
+        case SCHEDULED_REPLICATION:
+          return SCHEDULED;
         case "failed":
           return FAILED;
         default:
