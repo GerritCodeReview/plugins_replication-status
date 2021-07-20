@@ -99,6 +99,7 @@ public abstract class ReplicationStatus {
     FAILED,
     NOT_ATTEMPTED,
     SUCCEEDED,
+    SCHEDULED,
     UNKNOWN;
 
     static ReplicationStatusResult fromString(String result) {
@@ -107,6 +108,8 @@ public abstract class ReplicationStatus {
           return SUCCEEDED;
         case "not_attempted":
           return NOT_ATTEMPTED;
+        case "scheduled":
+          return SCHEDULED;
         case "failed":
           return FAILED;
         default:
