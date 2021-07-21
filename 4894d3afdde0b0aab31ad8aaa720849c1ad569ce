@@ -1,11 +1,12 @@
 {
   "checks": {
     "gerritforge:plugins-replication-status-build-test": {
-      "state": "RUNNING",
+      "state": "SUCCESSFUL",
       "url": "https://gerrit-ci.gerritforge.com/job/plugin-replication-status-verifier/job/30%252F312630%252F1/1/console",
       "started": "2021-07-21T00:33:47Z",
+      "finished": "2021-07-21T00:42:12Z",
       "created": "2021-07-21T00:29:11Z",
-      "updated": "2021-07-21T00:31:43Z"
+      "updated": "2021-07-21T00:40:08Z"
     },
     "gerritforge:plugins-replication-status-code-style": {
       "state": "SUCCESSFUL",
