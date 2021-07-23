@@ -1,6 +1,46 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7438607f_5b5edaa2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-23T08:20:04Z",
+      "side": 1,
+      "message": "looks good to me, once you address luca\u0027s comment I am happy to give a +2",
+      "revId": "27d5be44497564768e918c251b35a1d38daa9adc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28117e79_30376984",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2021-07-23T08:20:04Z",
+      "side": 1,
+      "message": "nit: REPLICATION_SCHEDULED ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 29,
+        "endLine": 34,
+        "endChar": 50
+      },
+      "revId": "27d5be44497564768e918c251b35a1d38daa9adc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5384e783_e34ac18f",
