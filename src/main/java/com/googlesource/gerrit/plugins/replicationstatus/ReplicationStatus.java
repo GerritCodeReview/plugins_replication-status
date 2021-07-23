@@ -28,9 +28,11 @@ public abstract class ReplicationStatus {
   static final String CACHE_NAME = "replication_status";
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
-  static ReplicationStatus create(ReplicationStatusResult status, long when) {
-    return new AutoValue_ReplicationStatus(status, when);
+  static ReplicationStatus create(ReplicationType type, ReplicationStatusResult status, long when) {
+    return new AutoValue_ReplicationStatus(type, status, when);
   }
+
+  public abstract ReplicationType type();
 
   public abstract ReplicationStatusResult status();
 
@@ -84,6 +86,7 @@ public abstract class ReplicationStatus {
           Cache.ReplicationStatusProto.newBuilder()
               .setWhen(object.when())
               .setStatus(object.status().name())
+              .setType(object.type().name())
               .build());
     }
 
@@ -93,7 +96,9 @@ public abstract class ReplicationStatus {
           Protos.parseUnchecked(Cache.ReplicationStatusProto.parser(), in);
 
       return ReplicationStatus.create(
-          ReplicationStatus.ReplicationStatusResult.valueOf(proto.getStatus()), proto.getWhen());
+          ReplicationStatus.ReplicationType.valueOf(proto.getType()),
+          ReplicationStatus.ReplicationStatusResult.valueOf(proto.getStatus()),
+          proto.getWhen());
     }
   }
 
@@ -124,5 +129,10 @@ public abstract class ReplicationStatus {
     public boolean isFailure() {
       return this == FAILED || this == UNKNOWN;
     }
+  }
+
+  enum ReplicationType {
+    PUSH,
+    FETCH;
   }
 }
