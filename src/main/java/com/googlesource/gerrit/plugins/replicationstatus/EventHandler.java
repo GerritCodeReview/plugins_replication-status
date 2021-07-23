@@ -14,28 +14,33 @@
 
 package com.googlesource.gerrit.plugins.replicationstatus;
 
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.CACHE_NAME;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.Key;
 import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationStatusResult;
 import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationStatusResult.SCHEDULED;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.FETCH;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.PUSH;
 
 import com.google.common.cache.Cache;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.server.config.GerritInstanceId;
 import com.google.gerrit.server.events.Event;
 import com.google.gerrit.server.events.EventListener;
-import com.google.gerrit.server.events.RefEvent;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.googlesource.gerrit.plugins.replication.events.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.events.RemoteRefReplicationEvent;
 import com.googlesource.gerrit.plugins.replication.events.ReplicationScheduledEvent;
+import java.util.Optional;
 
 class EventHandler implements EventListener {
-  private final Cache<ReplicationStatus.Key, ReplicationStatus> replicationStatusCache;
+  private final Cache<Key, ReplicationStatus> replicationStatusCache;
   private final String nodeInstanceId;
 
   @Inject
   EventHandler(
-      @Named(ReplicationStatus.CACHE_NAME)
-          Cache<ReplicationStatus.Key, ReplicationStatus> replicationStatusCache,
+      @Named(CACHE_NAME) Cache<Key, ReplicationStatus> replicationStatusCache,
       @Nullable @GerritInstanceId String nodeInstanceId) {
     this.replicationStatusCache = replicationStatusCache;
     this.nodeInstanceId = nodeInstanceId;
@@ -44,29 +49,36 @@ class EventHandler implements EventListener {
   @Override
   public void onEvent(Event event) {
     if (shouldConsume(event)) {
-      if (event instanceof RefReplicatedEvent) {
-        RefReplicatedEvent replEvent = (RefReplicatedEvent) event;
-        putCacheEntry(replEvent, replEvent.targetUri, replEvent.status);
-      } else if (event instanceof ReplicationScheduledEvent) {
-        ReplicationScheduledEvent replEvent = (ReplicationScheduledEvent) event;
-        putCacheEntry(replEvent, replEvent.targetUri, SCHEDULED.name());
+      if (event instanceof RemoteRefReplicationEvent) {
+        RemoteRefReplicationEvent replEvent = (RemoteRefReplicationEvent) event;
+        putCacheEntry(
+            replicationType(event),
+            replEvent,
+            replEvent.targetUri,
+            Optional.ofNullable(replEvent.status).orElse(SCHEDULED.name()));
       }
     }
   }
 
-  private <T extends RefEvent> void putCacheEntry(T refEvent, String targetNode, String status) {
-    ReplicationStatus.Key cacheKey =
-        ReplicationStatus.Key.create(
-            refEvent.getProjectNameKey(), targetNode, refEvent.getRefName());
+  private <T extends RemoteRefReplicationEvent> void putCacheEntry(
+      ReplicationType type, T refEvent, String remote, String status) {
+    Key cacheKey = Key.create(refEvent.getProjectNameKey(), remote, refEvent.getRefName());
 
     replicationStatusCache.put(
         cacheKey,
         ReplicationStatus.create(
-            ReplicationStatusResult.fromString(status), refEvent.eventCreatedOn));
+            type, ReplicationStatusResult.fromString(status), refEvent.eventCreatedOn));
   }
 
   private boolean shouldConsume(Event event) {
     return (nodeInstanceId == null && event.instanceId == null)
         || (nodeInstanceId != null && nodeInstanceId.equals(event.instanceId));
+  }
+
+  private static ReplicationType replicationType(Event refEvent) {
+    if (refEvent instanceof ReplicationScheduledEvent || refEvent instanceof RefReplicatedEvent) {
+      return PUSH;
+    }
+    return FETCH;
   }
 }

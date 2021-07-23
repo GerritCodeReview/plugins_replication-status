@@ -18,6 +18,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.gerrit.acceptance.testsuite.project.TestProjectUpdate.allow;
 import static com.google.gerrit.extensions.restapi.Url.encode;
 import static com.googlesource.gerrit.plugins.replication.ReplicationState.RefPushResult;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.PUSH;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
@@ -324,7 +325,8 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
                 remoteUrl,
                 RemoteReplicationStatus.create(
                     ImmutableMap.of(
-                        REF_MASTER, ReplicationStatus.create(replicationStatusResult, when)))),
+                        REF_MASTER,
+                        ReplicationStatus.create(PUSH, replicationStatusResult, when)))),
             projectReplicationStatusResult,
             project.get()));
   }
