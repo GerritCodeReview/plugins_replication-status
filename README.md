@@ -32,28 +32,44 @@ A payload, similar to this may be returned:
     "https://github.com/some/project.git": {
       "status": {
         "refs/changes/01/1/meta": {
+          "type": "PUSH",
           "status": "SUCCEEDED",
           "when": 1626688830
         },
         "refs/changes/03/3/meta": {
+          "type": "PUSH",
           "status": "SUCCEEDED",
           "when": 1626688854
         },
         "refs/changes/03/3/1": {
+          "type": "PUSH",
           "status": "SUCCEEDED",
           "when": 1626688854
         },
         "refs/changes/02/2/1": {
+          "type": "PUSH",
           "status": "SUCCEEDED",
           "when": 1626688844
         },
         "refs/changes/02/2/meta": {
+          "type": "PUSH",
           "status": "SUCCEEDED",
           "when": 1626688844
         },
         "refs/changes/01/1/1": {
+          "type": "PUSH",
           "status": "SUCCEEDED",
           "when": 1626688830
+        },
+        "refs/changes/04/4/meta": {
+          "type": "PULL",
+          "status": "SUCCEEDED",
+          "when": 1628000641
+        },
+        "refs/changes/04/4/1": {
+          "type": "PULL",
+          "status": "SUCCEEDED",
+          "when": 1628000641
         }
       }
     }
