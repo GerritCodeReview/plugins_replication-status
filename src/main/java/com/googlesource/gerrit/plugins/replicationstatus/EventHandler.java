@@ -14,19 +14,24 @@
 
 package com.googlesource.gerrit.plugins.replicationstatus;
 
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.Key;
 import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationStatusResult;
 import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationStatusResult.SCHEDULED;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.FETCH;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.PUSH;
 
 import com.google.common.cache.Cache;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.server.config.GerritInstanceId;
 import com.google.gerrit.server.events.Event;
 import com.google.gerrit.server.events.EventListener;
-import com.google.gerrit.server.events.RefEvent;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import com.googlesource.gerrit.plugins.replication.events.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.events.RemoteRefReplicationEvent;
 import com.googlesource.gerrit.plugins.replication.events.ReplicationScheduledEvent;
+import java.util.Optional;
 
 class EventHandler implements EventListener {
   private final Cache<ReplicationStatus.Key, ReplicationStatus> replicationStatusCache;
@@ -43,30 +48,36 @@ class EventHandler implements EventListener {
 
   @Override
   public void onEvent(Event event) {
-    if (shouldConsume(event)) {
-      if (event instanceof RefReplicatedEvent) {
-        RefReplicatedEvent replEvent = (RefReplicatedEvent) event;
-        putCacheEntry(replEvent, replEvent.targetUri, replEvent.status);
-      } else if (event instanceof ReplicationScheduledEvent) {
-        ReplicationScheduledEvent replEvent = (ReplicationScheduledEvent) event;
-        putCacheEntry(replEvent, replEvent.targetUri, SCHEDULED.name());
-      }
+    if (shouldConsume(event) && (event instanceof RemoteRefReplicationEvent)) {
+      RemoteRefReplicationEvent replicationEvent = (RemoteRefReplicationEvent) event;
+      putCacheEntry(
+          replicationType(event),
+          replicationEvent,
+          replicationEvent.targetUri,
+          Optional.ofNullable(replicationEvent.status).orElse(SCHEDULED.name()));
     }
   }
 
-  private <T extends RefEvent> void putCacheEntry(T refEvent, String targetNode, String status) {
-    ReplicationStatus.Key cacheKey =
-        ReplicationStatus.Key.create(
-            refEvent.getProjectNameKey(), targetNode, refEvent.getRefName());
+  private <T extends RemoteRefReplicationEvent> void putCacheEntry(
+      ReplicationType type, T replicationEvent, String remote, String status) {
+    Key cacheKey =
+        Key.create(replicationEvent.getProjectNameKey(), remote, replicationEvent.getRefName());
 
     replicationStatusCache.put(
         cacheKey,
         ReplicationStatus.create(
-            ReplicationStatusResult.fromString(status), refEvent.eventCreatedOn));
+            type, ReplicationStatusResult.fromString(status), replicationEvent.eventCreatedOn));
   }
 
   private boolean shouldConsume(Event event) {
     return (nodeInstanceId == null && event.instanceId == null)
         || (nodeInstanceId != null && nodeInstanceId.equals(event.instanceId));
+  }
+
+  private static ReplicationType replicationType(Event event) {
+    if (event instanceof ReplicationScheduledEvent || event instanceof RefReplicatedEvent) {
+      return PUSH;
+    }
+    return FETCH;
   }
 }
