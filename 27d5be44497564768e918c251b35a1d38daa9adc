@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59bb2958_f6f60745",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-23T12:53:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28117e79_30376984",
+      "range": {
+        "startLine": 34,
+        "startChar": 29,
+        "endLine": 34,
+        "endChar": 50
+      },
+      "revId": "27d5be44497564768e918c251b35a1d38daa9adc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5384e783_e34ac18f",
@@ -64,6 +88,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20de1d5e_e721e4ba",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-23T12:53:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5384e783_e34ac18f",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 71
+      },
+      "revId": "27d5be44497564768e918c251b35a1d38daa9adc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7b72e96_97bab3ef",
@@ -77,6 +125,30 @@
       "writtenOn": "2021-07-22T22:48:46Z",
       "side": 1,
       "message": "null",
+      "range": {
+        "startLine": 136,
+        "startChar": 40,
+        "endLine": 136,
+        "endChar": 58
+      },
+      "revId": "27d5be44497564768e918c251b35a1d38daa9adc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d75bdbd_31e453f0",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-07-23T12:53:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7b72e96_97bab3ef",
       "range": {
         "startLine": 136,
         "startChar": 40,
