@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "gerritforge:plugins-replication-status-code-style": {
+      "state": "SCHEDULED",
+      "created": "2021-07-23T12:58:00Z",
+      "updated": "2021-07-23T12:58:00Z"
+    }
+  }
+}
