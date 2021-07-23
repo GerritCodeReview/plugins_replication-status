@@ -18,6 +18,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.gerrit.acceptance.testsuite.project.TestProjectUpdate.allow;
 import static com.google.gerrit.extensions.restapi.Url.encode;
 import static com.googlesource.gerrit.plugins.replication.ReplicationState.RefPushResult;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.FETCH;
+import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatus.ReplicationType.PUSH;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
@@ -38,6 +40,7 @@ import com.google.gerrit.server.config.SitePaths;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.googlesource.gerrit.plugins.replication.events.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.events.RemoteRefReplicationEvent;
 import com.googlesource.gerrit.plugins.replication.events.ReplicationScheduledEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -126,7 +129,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(successReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(successReplicationStatus(PUSH, REMOTE, project, eventCreatedOn));
   }
 
   @Test
@@ -138,7 +141,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(scheduledReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(scheduledReplicationStatus(PUSH, REMOTE, project, eventCreatedOn));
   }
 
   @Test
@@ -150,7 +153,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(successReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(successReplicationStatus(PUSH, REMOTE, project, eventCreatedOn));
   }
 
   @Test
@@ -173,7 +176,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(successReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(successReplicationStatus(PUSH, REMOTE, project, eventCreatedOn));
   }
 
   @Test
@@ -186,7 +189,19 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(failedReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(failedReplicationStatus(PUSH, REMOTE, project, eventCreatedOn));
+  }
+
+  @Test
+  public void shouldReturnScheduledProjectFetchReplicationStatus() throws Exception {
+    long eventCreatedOn = System.currentTimeMillis();
+
+    eventHandler.onEvent(fetchScheduledEvent(null, eventCreatedOn, REF_MASTER, REMOTE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+
+    result.assertOK();
+    assertThat(contentWithoutMagicJson(result))
+        .isEqualTo(scheduledReplicationStatus(FETCH, REMOTE, project, eventCreatedOn));
   }
 
   private String contentWithoutMagicJson(RestResponse response) throws IOException {
@@ -237,6 +252,17 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
     return scheduledEvent;
   }
 
+  private RemoteRefReplicationEvent fetchScheduledEvent(
+      @Nullable String instanceId, long when, String ref, String remote) throws URISyntaxException {
+    RemoteRefReplicationEvent scheduledFetchEvent =
+        new RemoteRefReplicationEvent(
+            "fetch-ref-replication-scheduled", project.get(), ref, new URIish(remote), null);
+    scheduledFetchEvent.instanceId = instanceId;
+    scheduledFetchEvent.eventCreatedOn = when;
+
+    return scheduledFetchEvent;
+  }
+
   private RefReplicatedEvent successReplicatedEvent(
       @Nullable String instanceId, long when, String remoteUrl) throws URISyntaxException {
 
@@ -275,25 +301,29 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
             project.get()));
   }
 
-  private String successReplicationStatus(String remote, Project.NameKey project, long when)
+  private String successReplicationStatus(
+      ReplicationStatus.ReplicationType type, String remote, Project.NameKey project, long when)
       throws URISyntaxException {
     return successReplicationStatus(
-        remote, project, when, ReplicationStatus.ReplicationStatusResult.SUCCEEDED);
+        type, remote, project, when, ReplicationStatus.ReplicationStatusResult.SUCCEEDED);
   }
 
-  private String scheduledReplicationStatus(String remote, Project.NameKey project, long when)
+  private String scheduledReplicationStatus(
+      ReplicationStatus.ReplicationType type, String remote, Project.NameKey project, long when)
       throws URISyntaxException {
     return successReplicationStatus(
-        remote, project, when, ReplicationStatus.ReplicationStatusResult.SCHEDULED);
+        type, remote, project, when, ReplicationStatus.ReplicationStatusResult.SCHEDULED);
   }
 
   private String successReplicationStatus(
+      ReplicationStatus.ReplicationType type,
       String remote,
       Project.NameKey project,
       long when,
       ReplicationStatus.ReplicationStatusResult replicationStatusResult)
       throws URISyntaxException {
     return projectReplicationStatus(
+        type,
         remote,
         project,
         when,
@@ -301,9 +331,11 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
         replicationStatusResult);
   }
 
-  private String failedReplicationStatus(String remote, Project.NameKey project, long when)
+  private String failedReplicationStatus(
+      ReplicationStatus.ReplicationType type, String remote, Project.NameKey project, long when)
       throws URISyntaxException {
     return projectReplicationStatus(
+        type,
         remote,
         project,
         when,
@@ -312,19 +344,20 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   }
 
   private String projectReplicationStatus(
+      ReplicationStatus.ReplicationType type,
       String remoteUrl,
       Project.NameKey project,
       long when,
       ProjectReplicationStatus.ProjectReplicationStatusResult projectReplicationStatusResult,
-      ReplicationStatus.ReplicationStatusResult replicationStatusResult)
-      throws URISyntaxException {
+      ReplicationStatus.ReplicationStatusResult replicationStatusResult) {
     return gson.toJson(
         ProjectReplicationStatus.create(
             ImmutableMap.of(
                 remoteUrl,
                 RemoteReplicationStatus.create(
                     ImmutableMap.of(
-                        REF_MASTER, ReplicationStatus.create(replicationStatusResult, when)))),
+                        REF_MASTER,
+                        ReplicationStatus.create(type, replicationStatusResult, when)))),
             projectReplicationStatusResult,
             project.get()));
   }
