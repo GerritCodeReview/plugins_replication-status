@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "968d8aca_fb4eb9a5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-07-23T15:30:58Z",
+      "side": 1,
+      "message": "this can be replaced with something like ReplicationStatus.SCHEDULED.getName(), check:\nhttps://howtodoinjava.com/java/enum/java-enum-string-example/",
+      "range": {
+        "startLine": 34,
+        "startChar": 29,
+        "endLine": 34,
+        "endChar": 50
+      },
+      "revId": "0a130df76334eb177823ce7c4217a20584bea0e7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21a466cd_7c79c11b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-07-23T15:30:58Z",
+      "side": 1,
+      "message": "nit:  could be put brackets for readability:\n(nodeInstanceId \u003d\u003d null \u0026\u0026 event.instanceId \u003d\u003d null) || (nodeInstanceId !\u003d null \u0026\u0026 nodeInstanceId.equals(event.instanceId))\n\nplus I\u0027m not sure but I think java will interpret it as:\nnodeInstanceId \u003d\u003d null \u0026\u0026 (event.instanceId \u003d\u003d null || nodeInstanceId !\u003d null) \u0026\u0026 nodeInstanceId.equals(event.instanceId)",
+      "range": {
+        "startLine": 70,
+        "startChar": 11,
+        "endLine": 71,
+        "endChar": 77
+      },
+      "revId": "0a130df76334eb177823ce7c4217a20584bea0e7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16cb7bc1_eccf5b92",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatus.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-07-23T15:30:58Z",
+      "side": 1,
+      "message": "why not having enum with value: https://howtodoinjava.com/java/enum/java-enum-string-example/\n\nthan fromString method can be replaced with standard enum method ReplicationStatusResult.valueOf()",
+      "range": {
+        "startLine": 113,
+        "startChar": 13,
+        "endLine": 113,
+        "endChar": 34
+      },
+      "revId": "0a130df76334eb177823ce7c4217a20584bea0e7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
