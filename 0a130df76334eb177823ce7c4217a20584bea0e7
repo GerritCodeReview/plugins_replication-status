@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7faea7ec_ee0383a7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/EventHandler.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-07-23T16:33:29Z",
+      "side": 1,
+      "message": "According to [1] `\u0026\u0026` wins over `||` but having brackets would make it easier to read ;)\n\n[1] https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html",
+      "parentUuid": "21a466cd_7c79c11b",
+      "range": {
+        "startLine": 70,
+        "startChar": 11,
+        "endLine": 71,
+        "endChar": 77
+      },
+      "revId": "0a130df76334eb177823ce7c4217a20584bea0e7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "16cb7bc1_eccf5b92",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatus.java",
         "patchSetId": 4
