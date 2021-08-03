@@ -38,6 +38,7 @@ import com.google.gerrit.server.config.SitePaths;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.googlesource.gerrit.plugins.replication.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.ReplicationScheduledEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Collections;
@@ -128,6 +129,18 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   }
 
   @Test
+  public void shouldReturnScheduledProjectReplicationStatus() throws Exception {
+    long eventCreatedOn = System.currentTimeMillis();
+
+    eventHandler.onEvent(scheduledEvent(null, eventCreatedOn, REF_MASTER, REMOTE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+
+    result.assertOK();
+    assertThat(contentWithoutMagicJson(result))
+        .isEqualTo(scheduledReplicationStatus(REMOTE, project, eventCreatedOn));
+  }
+
+  @Test
   public void shouldConsumeEventsThatHaveNoInstanceId() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
@@ -212,6 +225,16 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
     return replicatedEvent;
   }
 
+  private ReplicationScheduledEvent scheduledEvent(
+      @Nullable String instanceId, long when, String ref, String remote) {
+    ReplicationScheduledEvent scheduledEvent =
+        new ReplicationScheduledEvent(project.get(), ref, remote);
+    scheduledEvent.instanceId = instanceId;
+    scheduledEvent.eventCreatedOn = when;
+
+    return scheduledEvent;
+  }
+
   private RefReplicatedEvent successReplicatedEvent(
       @Nullable String instanceId, long when, String remoteUrl) {
 
@@ -252,12 +275,28 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
   private String successReplicationStatus(String remote, Project.NameKey project, long when)
       throws URISyntaxException {
+    return successReplicationStatus(
+        remote, project, when, ReplicationStatus.ReplicationStatusResult.SUCCEEDED);
+  }
+
+  private String scheduledReplicationStatus(String remote, Project.NameKey project, long when)
+      throws URISyntaxException {
+    return successReplicationStatus(
+        remote, project, when, ReplicationStatus.ReplicationStatusResult.SCHEDULED);
+  }
+
+  private String successReplicationStatus(
+      String remote,
+      Project.NameKey project,
+      long when,
+      ReplicationStatus.ReplicationStatusResult replicationStatusResult)
+      throws URISyntaxException {
     return projectReplicationStatus(
         remote,
         project,
         when,
         ProjectReplicationStatus.ProjectReplicationStatusResult.OK,
-        ReplicationStatus.ReplicationStatusResult.SUCCEEDED);
+        replicationStatusResult);
   }
 
   private String failedReplicationStatus(String remote, Project.NameKey project, long when)
