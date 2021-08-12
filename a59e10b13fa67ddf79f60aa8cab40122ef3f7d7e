@@ -1,5 +1,10 @@
 {
   "checks": {
+    "gerritforge:plugins-replication-status-build-test": {
+      "state": "SCHEDULED",
+      "created": "2021-08-12T17:09:41Z",
+      "updated": "2021-08-12T17:09:41Z"
+    },
     "gerritforge:plugins-replication-status-code-style": {
       "state": "SCHEDULED",
       "created": "2021-08-12T17:09:40Z",
