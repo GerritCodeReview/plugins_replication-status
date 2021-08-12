@@ -24,7 +24,9 @@ import com.google.gerrit.acceptance.LightweightPluginDaemonTest;
 import com.google.gerrit.acceptance.RestResponse;
 import com.google.gerrit.acceptance.TestAccount;
 import com.google.gerrit.acceptance.TestPlugin;
+import com.google.gerrit.acceptance.UseLocalDisk;
 import com.google.gerrit.acceptance.config.GerritConfig;
+import com.google.gerrit.acceptance.config.GlobalPluginConfig;
 import com.google.gerrit.acceptance.testsuite.project.ProjectOperations;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.common.data.AccessSection;
@@ -42,6 +44,7 @@ import com.googlesource.gerrit.plugins.replication.ReplicationScheduledEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Collections;
+import java.util.Map;
 import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.transport.RemoteRefUpdate;
 import org.junit.Before;
@@ -50,9 +53,12 @@ import org.junit.Test;
 @TestPlugin(
     name = "replication-status",
     sysModule = "com.googlesource.gerrit.plugins.replicationstatus.Module")
+@UseLocalDisk
 public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   private static final String REF_MASTER = Constants.R_HEADS + Constants.MASTER;
-  private static final String REMOTE = "ssh://some.remote.host";
+  private static final String REMOTE_TAGRET_NODE = "some.remote.host";
+  private static final String REMOTE_TARGER_URL_TEMPLATE = "ssh://some.remote.host/git/${name}.git";
+  private static final String REMOTE_NAME = "some-remote-host";
 
   private static final Gson gson = newGson();
 
@@ -68,27 +74,41 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldBeOKSuccessForAdminUsers() throws Exception {
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
     result.assertOK();
 
-    assertThat(contentWithoutMagicJson(result)).isEqualTo(emptyReplicationStatus(project, REMOTE));
+    assertThat(contentWithoutMagicJson(result))
+        .isEqualTo(emptyReplicationStatus(project, REMOTE_TAGRET_NODE));
   }
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldBeOKSuccessForProjectOwners() throws Exception {
     makeProjectOwner(user, project);
-    RestResponse result = userRestSession.get(endpoint(project, REMOTE));
+    RestResponse result = userRestSession.get(endpoint(project, REMOTE_NAME));
     result.assertOK();
 
-    assertThat(contentWithoutMagicJson(result)).isEqualTo(emptyReplicationStatus(project, REMOTE));
+    assertThat(contentWithoutMagicJson(result))
+        .isEqualTo(emptyReplicationStatus(project, REMOTE_TAGRET_NODE));
   }
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldBeForbiddenForNonProjectOwners() throws Exception {
-    RestResponse result = userRestSession.get(endpoint(project, REMOTE));
+    RestResponse result = userRestSession.get(endpoint(project, REMOTE_NAME));
     result.assertForbidden();
 
     assertThat(result.getEntityContent()).contains("Administrate Server or Project owner required");
@@ -96,8 +116,12 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldBeForbiddenForAnonymousUsers() throws Exception {
-    RestResponse result = anonymousRestSession.get(endpoint(project, REMOTE));
+    RestResponse result = anonymousRestSession.get(endpoint(project, REMOTE_NAME));
     result.assertForbidden();
 
     assertThat(result.getEntityContent()).contains("Administrate Server or Project owner required");
@@ -105,87 +129,170 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldNotReportStatusOfReplicationsGeneratedOnDifferentNodes() throws Exception {
     eventHandler.onEvent(
-        successReplicatedEvent("testInstanceId-2", System.currentTimeMillis(), REMOTE));
+        successReplicatedEvent("testInstanceId-2", System.currentTimeMillis(), REMOTE_TAGRET_NODE));
 
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
     result.assertOK();
 
-    assertThat(contentWithoutMagicJson(result)).isEqualTo(emptyReplicationStatus(project, REMOTE));
+    assertThat(contentWithoutMagicJson(result))
+        .isEqualTo(emptyReplicationStatus(project, REMOTE_TAGRET_NODE));
   }
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldReturnSuccessfulProjectReplicationStatus() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
-    eventHandler.onEvent(successReplicatedEvent("testInstanceId-1", eventCreatedOn, REMOTE));
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    eventHandler.onEvent(
+        successReplicatedEvent("testInstanceId-1", eventCreatedOn, REMOTE_TAGRET_NODE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(successReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(successReplicationStatus(REMOTE_TAGRET_NODE, project, eventCreatedOn));
   }
 
   @Test
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldReturnScheduledProjectReplicationStatus() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
-    eventHandler.onEvent(scheduledEvent(null, eventCreatedOn, REF_MASTER, REMOTE));
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    eventHandler.onEvent(scheduledEvent(null, eventCreatedOn, REF_MASTER, REMOTE_TAGRET_NODE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(scheduledReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(scheduledReplicationStatus(REMOTE_TAGRET_NODE, project, eventCreatedOn));
   }
 
   @Test
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldConsumeEventsThatHaveNoInstanceId() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
-    eventHandler.onEvent(successReplicatedEvent(null, eventCreatedOn, REMOTE));
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    eventHandler.onEvent(successReplicatedEvent(null, eventCreatedOn, REMOTE_TAGRET_NODE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(successReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(successReplicationStatus(REMOTE_TAGRET_NODE, project, eventCreatedOn));
   }
 
   @Test
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldNotConsumeEventsWhenNodeInstanceIdIsNullButEventHasIt() throws Exception {
     eventHandler.onEvent(
-        successReplicatedEvent("testInstanceId-2", System.currentTimeMillis(), REMOTE));
+        successReplicatedEvent("testInstanceId-2", System.currentTimeMillis(), REMOTE_TAGRET_NODE));
 
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
     result.assertOK();
 
-    assertThat(contentWithoutMagicJson(result)).isEqualTo(emptyReplicationStatus(project, REMOTE));
+    assertThat(contentWithoutMagicJson(result))
+        .isEqualTo(emptyReplicationStatus(project, REMOTE_TAGRET_NODE));
   }
 
   @Test
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldConsumeEventsWhenBothNodeAndEventHaveNoInstanceId() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
-    eventHandler.onEvent(successReplicatedEvent(null, eventCreatedOn, REMOTE));
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    eventHandler.onEvent(successReplicatedEvent(null, eventCreatedOn, REMOTE_TAGRET_NODE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(successReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(successReplicationStatus(REMOTE_TAGRET_NODE, project, eventCreatedOn));
   }
 
   @Test
   @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
   public void shouldShowFailedInPayloadWhenRefCouldntBeReplicated() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
-    eventHandler.onEvent(failedReplicatedEvent("testInstanceId-1", eventCreatedOn, REMOTE));
-    RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
+    eventHandler.onEvent(
+        failedReplicatedEvent("testInstanceId-1", eventCreatedOn, REMOTE_TAGRET_NODE));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
 
     result.assertOK();
     assertThat(contentWithoutMagicJson(result))
-        .isEqualTo(failedReplicationStatus(REMOTE, project, eventCreatedOn));
+        .isEqualTo(failedReplicationStatus(REMOTE_TAGRET_NODE, project, eventCreatedOn));
+  }
+
+  @Test
+  @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      value = REMOTE_TARGER_URL_TEMPLATE)
+  public void shouldBeOKSuccessForNonExistentRemoteName() throws Exception {
+    String nonExistingRemote = "non-existing-remote";
+    RestResponse result = adminRestSession.get(endpoint(project, nonExistingRemote));
+    result.assertOK();
+
+    assertThat(contentWithoutMagicJson(result)).isEqualTo(emptyReplicationStatus(project));
+  }
+
+  @Test
+  @GerritConfig(name = "gerrit.instanceId", value = "testInstanceId-1")
+  @GlobalPluginConfig(
+      pluginName = "replication",
+      name = "remote.some-remote-host.url",
+      values = {REMOTE_TARGER_URL_TEMPLATE, "ssh://some.remote.host2/git/${name}.git"})
+  public void shouldReturnSuccessfulProjectReplicationStatusForMultipeURLs() throws Exception {
+    long eventCreatedOn = System.currentTimeMillis();
+
+    eventHandler.onEvent(
+        successReplicatedEvent("testInstanceId-1", eventCreatedOn, REMOTE_TAGRET_NODE));
+    eventHandler.onEvent(
+        successReplicatedEvent("testInstanceId-1", eventCreatedOn, "some.remote.host2"));
+    RestResponse result = adminRestSession.get(endpoint(project, REMOTE_NAME));
+
+    result.assertOK();
+    String resultJson = contentWithoutMagicJson(result);
+    Map<String, RemoteReplicationStatus> statuses =
+        ImmutableMap.of(
+            REMOTE_TAGRET_NODE,
+            RemoteReplicationStatus.create(
+                ImmutableMap.of(
+                    REF_MASTER,
+                    ReplicationStatus.create(
+                        ReplicationStatus.ReplicationStatusResult.SUCCEEDED, eventCreatedOn))),
+            "some.remote.host2",
+            RemoteReplicationStatus.create(
+                ImmutableMap.of(
+                    REF_MASTER,
+                    ReplicationStatus.create(
+                        ReplicationStatus.ReplicationStatusResult.SUCCEEDED, eventCreatedOn))));
+    assertThat(resultJson)
+        .isEqualTo(
+            projectReplicationStatus(
+                statuses, project, ProjectReplicationStatus.ProjectReplicationStatusResult.OK));
   }
 
   private String contentWithoutMagicJson(RestResponse response) throws IOException {
@@ -264,13 +371,21 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
         "/projects/%s/remotes/%s/replication-status", project.get(), encode(remote));
   }
 
-  private String emptyReplicationStatus(Project.NameKey project, String remoteUrl)
-      throws URISyntaxException {
+  private String emptyReplicationStatus(Project.NameKey project, String remoteUrl) {
+    return emptyReplicationStatus(
+        ImmutableMap.of(remoteUrl, RemoteReplicationStatus.create(Collections.emptyMap())),
+        project);
+  }
+
+  private String emptyReplicationStatus(Project.NameKey project) {
+    return emptyReplicationStatus(ImmutableMap.of(), project);
+  }
+
+  private String emptyReplicationStatus(
+      Map<String, RemoteReplicationStatus> statuses, Project.NameKey project) {
     return gson.toJson(
         ProjectReplicationStatus.create(
-            ImmutableMap.of(remoteUrl, RemoteReplicationStatus.create(Collections.emptyMap())),
-            ProjectReplicationStatus.ProjectReplicationStatusResult.OK,
-            project.get()));
+            statuses, ProjectReplicationStatus.ProjectReplicationStatusResult.OK, project.get()));
   }
 
   private String successReplicationStatus(String remote, Project.NameKey project, long when)
@@ -314,16 +429,22 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
       Project.NameKey project,
       long when,
       ProjectReplicationStatus.ProjectReplicationStatusResult projectReplicationStatusResult,
-      ReplicationStatus.ReplicationStatusResult replicationStatusResult)
-      throws URISyntaxException {
+      ReplicationStatus.ReplicationStatusResult replicationStatusResult) {
+    return projectReplicationStatus(
+        ImmutableMap.of(
+            remoteUrl,
+            RemoteReplicationStatus.create(
+                ImmutableMap.of(
+                    REF_MASTER, ReplicationStatus.create(replicationStatusResult, when)))),
+        project,
+        projectReplicationStatusResult);
+  }
+
+  private String projectReplicationStatus(
+      Map<String, RemoteReplicationStatus> statuses,
+      Project.NameKey project,
+      ProjectReplicationStatus.ProjectReplicationStatusResult projectReplicationStatusResult) {
     return gson.toJson(
-        ProjectReplicationStatus.create(
-            ImmutableMap.of(
-                remoteUrl,
-                RemoteReplicationStatus.create(
-                    ImmutableMap.of(
-                        REF_MASTER, ReplicationStatus.create(replicationStatusResult, when)))),
-            projectReplicationStatusResult,
-            project.get()));
+        ProjectReplicationStatus.create(statuses, projectReplicationStatusResult, project.get()));
   }
 }
