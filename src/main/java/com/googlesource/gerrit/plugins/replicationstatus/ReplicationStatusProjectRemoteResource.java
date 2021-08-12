@@ -26,13 +26,10 @@ public class ReplicationStatusProjectRemoteResource implements RestResource {
 
   private final Project.NameKey projectNameKey;
   private final String remote;
-  private final String remoteURL;
 
-  public ReplicationStatusProjectRemoteResource(
-      Project.NameKey projectNameKey, String remote, String remoteURL) {
+  public ReplicationStatusProjectRemoteResource(Project.NameKey projectNameKey, String remote) {
     this.projectNameKey = projectNameKey;
     this.remote = remote;
-    this.remoteURL = remoteURL;
   }
 
   public Project.NameKey getProjectNameKey() {
@@ -41,9 +38,5 @@ public class ReplicationStatusProjectRemoteResource implements RestResource {
 
   public String getRemote() {
     return remote;
-  }
-
-  public String getRemoteUrl() {
-    return remoteURL;
   }
 }
