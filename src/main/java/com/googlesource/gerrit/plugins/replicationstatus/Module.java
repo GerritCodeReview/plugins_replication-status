@@ -16,13 +16,23 @@ package com.googlesource.gerrit.plugins.replicationstatus;
 
 import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.gerrit.lifecycle.LifecycleModule;
+import com.google.gerrit.server.config.SitePaths;
 import com.google.gerrit.server.events.EventListener;
+import com.google.inject.Inject;
 
 class Module extends LifecycleModule {
+
+  private final SitePaths site;
+
+  @Inject
+  public Module(SitePaths site) {
+    this.site = site;
+  }
+
   @Override
   protected void configure() {
     DynamicSet.bind(binder(), EventListener.class).to(EventHandler.class);
-    install(new ReplicationStatusApiModule());
+    install(new ReplicationStatusApiModule(site));
     install(new ReplicationStatusCacheModule());
   }
 }
