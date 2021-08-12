@@ -9,19 +9,25 @@ status of specific refs to specific remotes.
 The cache information is then exposed via a project's resource REST endpoint:
 
 ```bash
-curl -v --user <user> '<gerrit-server>/a/projects/<project-name>/remotes/<remote-url>/replication-status'
+curl -v --user <user> '<gerrit-server>/a/projects/<project-name>/remotes/<remote-name>/replication-status'
 ```
 
 * <project-name>: an (url-encoded) project repository
-* <remote-url>: an (url-encoded) remote URL for the replication
+* <remote-name>: an (url-encoded) remote name for the replication
 
 For instance, to assess the replication status of the project `some/project` to
 the
-`https://github.com/some/project.git` URL, the following endpoint should be
-called:
+`https://github.com/some/project.git` URL with the replication configuration:
+
+```
+[remote "github-replication"]
+    url = https://github.com/${name}.git
+```
+
+the following endpoint should be called:
 
 ```bash
-curl -v --user <user> '<gerrit-server>/a/projects/some%2Fproject/remotes/https%3A%2F%2Fgithub.com%2Fsome%2Fproject.git/replication-status'
+curl -v --user <user> '<gerrit-server>/a/projects/some%2Fproject/remotes/github-replication/replication-status'
 ```
 
 A payload, similar to this may be returned:
