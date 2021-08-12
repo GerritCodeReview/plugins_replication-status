@@ -46,9 +46,9 @@ public class ReplicationStatusProjectRemoteCollection
   public ReplicationStatusProjectRemoteResource parse(ProjectResource parent, IdString id)
       throws ResourceNotFoundException, Exception {
     Project.NameKey projectNameKey = parent.getNameKey();
-    String remoteURL = id.get();
+    String remoteName = id.get();
 
-    return new ReplicationStatusProjectRemoteResource(projectNameKey, remoteURL, remoteURL);
+    return new ReplicationStatusProjectRemoteResource(projectNameKey, remoteName);
   }
 
   @Override

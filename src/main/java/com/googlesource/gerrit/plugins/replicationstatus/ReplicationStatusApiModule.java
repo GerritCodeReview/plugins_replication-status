@@ -19,9 +19,23 @@ import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatu
 
 import com.google.gerrit.extensions.registration.DynamicMap;
 import com.google.gerrit.extensions.restapi.RestApiModule;
+import com.google.gerrit.server.config.SitePaths;
 import com.google.inject.Scopes;
+import com.googlesource.gerrit.plugins.replication.ConfigParser;
+import com.googlesource.gerrit.plugins.replication.DestinationConfigParser;
+import com.googlesource.gerrit.plugins.replication.FanoutReplicationConfig;
+import com.googlesource.gerrit.plugins.replication.ReplicationConfig;
+import com.googlesource.gerrit.plugins.replication.ReplicationFileBasedConfig;
+import java.nio.file.Files;
 
 class ReplicationStatusApiModule extends RestApiModule {
+
+  private final SitePaths site;
+
+  public ReplicationStatusApiModule(SitePaths site) {
+    this.site = site;
+  }
+
   @Override
   protected void configure() {
     bind(ReplicationStatusAction.class).in(Scopes.SINGLETON);
@@ -29,5 +43,15 @@ class ReplicationStatusApiModule extends RestApiModule {
     child(PROJECT_KIND, "remotes").to(ReplicationStatusProjectRemoteCollection.class);
     get(REPLICATION_STATUS_PROJECT_REMOTE_KIND, "replication-status")
         .to(ReplicationStatusAction.class);
+
+    bind(ConfigParser.class).to(DestinationConfigParser.class).in(Scopes.SINGLETON);
+    bind(ReplicationConfig.class).to(getReplicationConfigClass()).in(Scopes.SINGLETON);
+  }
+
+  private Class<? extends ReplicationConfig> getReplicationConfigClass() {
+    if (Files.exists(site.etc_dir.resolve("replication"))) {
+      return FanoutReplicationConfig.class;
+    }
+    return ReplicationFileBasedConfig.class;
   }
 }
