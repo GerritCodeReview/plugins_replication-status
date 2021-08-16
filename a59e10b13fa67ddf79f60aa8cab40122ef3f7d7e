@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f347d66e_7a6860e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "known",
+      "range": {
+        "startLine": 11,
+        "startChar": 29,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "285b5b30_2ba00b07",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "This is not \"remotes\", this is always destinations because this is always going to return an instance of DestinationConfigParser right?\n\nWe are only able to parse destinations (replication) here, but not sources (pull-replication).\n\nIt might be fine in 3.2 because we only have replication, but it will be a radical refactoring when we merge up to master, because there we need to lookup for sources as well.\n\nWDYT?",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 32
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cab24e17_5b9c46c8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "If we are only dealing with Destinations could we not just inject DestinationCollection?",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 89
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a98ead2d_c5129fbe",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "nit: there\u0027s no reason to open the repository if remoteConfig is empty",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 71
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a07a184c_1d01f617",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "getOverallStatus",
+      "range": {
+        "startLine": 125,
+        "startChar": 41,
+        "endLine": 125,
+        "endChar": 56
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea5869fa_528307de",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "nit: can replace with\n\n```\n        .filter(ReplicationStatus::isFailure)\n```",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 45
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44535a46_d6420ebf",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "Should we mention where this logic is coming from and why it has been copy\u0026pasted?",
+      "range": {
+        "startLine": 160,
+        "startChar": 1,
+        "endLine": 160,
+        "endChar": 95
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5d3e2ea_584ea238",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-16T18:56:17Z",
+      "side": 1,
+      "message": "TARGET",
+      "range": {
+        "startLine": 60,
+        "startChar": 37,
+        "endLine": 60,
+        "endChar": 43
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
