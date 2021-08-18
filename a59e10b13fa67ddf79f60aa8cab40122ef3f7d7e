@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4324052d_ef9ce182",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-18T10:36:43Z",
+      "side": 1,
+      "message": "Not sure that\u0027s the case.\nThe DestinationConfigParser skips everything that is not a push, so I don\u0027t believe it will read fetch configurations.\n\nhttps://gerrit.googlesource.com/plugins/replication/+/refs/heads/stable-3.2/src/main/java/com/googlesource/gerrit/plugins/replication/DestinationConfigParser.java#60",
+      "parentUuid": "6fd855a6_1339ffdc",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 32
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cab24e17_5b9c46c8",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
         "patchSetId": 1
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "Yes I was trying with that but the problem is that DestinationsCollection contains tons of extra logic and it requires a lot of binding from replication plugin, for example it requires ReplicationQueue and EventBus and in the constructer it registering itself to the event bus[1]\n\n[1] https://gerrit.googlesource.com/plugins/replication/+/refs/heads/stable-3.2/src/main/java/com/googlesource/gerrit/plugins/replication/DestinationsCollection.java#79",
       "parentUuid": "cab24e17_5b9c46c8",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 89
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e2544db_2cdc7832",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-18T10:36:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "719a77de_640d6b77",
       "range": {
         "startLine": 74,
         "startChar": 0,
@@ -179,6 +227,30 @@
       "side": 1,
       "message": "I agree and it was like this originally but if I open the connection inside the lambda function throwing BadRequestException is getting a bit more complicated and would have to create functional interface and refactor the code. Should I do that as a follow up change?",
       "parentUuid": "a98ead2d_c5129fbe",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 71
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad8b7c8f_11d2286b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-18T10:36:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "30f72260_10ee6f36",
       "range": {
         "startLine": 93,
         "startChar": 0,
@@ -273,6 +345,30 @@
       "side": 1,
       "message": "this doesn\u0027t compile with the message:The target type of this expression must be a functional interface",
       "parentUuid": "ea5869fa_528307de",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 45
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e06840c_397d8c4a",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2021-08-18T10:36:43Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9ada9cb6_b4c6c1c5",
       "range": {
         "startLine": 129,
         "startChar": 0,
