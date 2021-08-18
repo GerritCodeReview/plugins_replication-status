@@ -119,6 +119,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "185cb322_d3708f3b",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T19:11:56Z",
+      "side": 1,
+      "message": "hmm good point. So the easiest way is to not reuse config parser from replication/pull replication plugins but to parse it on our own and pick up only information we need",
+      "parentUuid": "4324052d_ef9ce182",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 32
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cab24e17_5b9c46c8",
