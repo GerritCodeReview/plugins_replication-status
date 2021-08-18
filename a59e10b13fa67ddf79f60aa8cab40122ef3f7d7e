@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6409ef3_59da7036",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f347d66e_7a6860e4",
+      "range": {
+        "startLine": 11,
+        "startChar": 29,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "285b5b30_2ba00b07",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-08-16T18:56:17Z",
       "side": 1,
       "message": "This is not \"remotes\", this is always destinations because this is always going to return an instance of DestinationConfigParser right?\n\nWe are only able to parse destinations (replication) here, but not sources (pull-replication).\n\nIt might be fine in 3.2 because we only have replication, but it will be a radical refactoring when we merge up to master, because there we need to lookup for sources as well.\n\nWDYT?",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 32
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fd855a6_1339ffdc",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "Replication and pull-replication shares the same configuration files. This means that url property is the same for both. Plus we use com.googlesource.gerrit.plugins.replication.RemoteConfiguration.getUrls() which is implemented by both DestinationConfiguration and SourceConfiguration. You are right in replication-status plugin we always bind DestinationConfiguration but it doesn\u0027t matter because both will parse url property in the same way so even without replication plugin it should work the same way",
+      "parentUuid": "285b5b30_2ba00b07",
       "range": {
         "startLine": 69,
         "startChar": 0,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "719a77de_640d6b77",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "Yes I was trying with that but the problem is that DestinationsCollection contains tons of extra logic and it requires a lot of binding from replication plugin, for example it requires ReplicationQueue and EventBus and in the constructer it registering itself to the event bus[1]\n\n[1] https://gerrit.googlesource.com/plugins/replication/+/refs/heads/stable-3.2/src/main/java/com/googlesource/gerrit/plugins/replication/DestinationsCollection.java#79",
+      "parentUuid": "cab24e17_5b9c46c8",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 89
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a98ead2d_c5129fbe",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
         "patchSetId": 1
@@ -95,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "30f72260_10ee6f36",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "I agree and it was like this originally but if I open the connection inside the lambda function throwing BadRequestException is getting a bit more complicated and would have to create functional interface and refactor the code. Should I do that as a follow up change?",
+      "parentUuid": "a98ead2d_c5129fbe",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 71
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a07a184c_1d01f617",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
         "patchSetId": 1
@@ -106,6 +202,30 @@
       "writtenOn": "2021-08-16T18:56:17Z",
       "side": 1,
       "message": "getOverallStatus",
+      "range": {
+        "startLine": 125,
+        "startChar": 41,
+        "endLine": 125,
+        "endChar": 56
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ff6bcad_cccf6e21",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a07a184c_1d01f617",
       "range": {
         "startLine": 125,
         "startChar": 41,
@@ -141,6 +261,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9ada9cb6_b4c6c1c5",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "this doesn\u0027t compile with the message:The target type of this expression must be a functional interface",
+      "parentUuid": "ea5869fa_528307de",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 45
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "44535a46_d6420ebf",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
         "patchSetId": 1
@@ -152,6 +296,30 @@
       "writtenOn": "2021-08-16T18:56:17Z",
       "side": 1,
       "message": "Should we mention where this logic is coming from and why it has been copy\u0026pasted?",
+      "range": {
+        "startLine": 160,
+        "startChar": 1,
+        "endLine": 160,
+        "endChar": 95
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "471b940b_e2617da4",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44535a46_d6420ebf",
       "range": {
         "startLine": 160,
         "startChar": 1,
@@ -175,6 +343,30 @@
       "writtenOn": "2021-08-16T18:56:17Z",
       "side": 1,
       "message": "TARGET",
+      "range": {
+        "startLine": 60,
+        "startChar": 37,
+        "endLine": 60,
+        "endChar": 43
+      },
+      "revId": "a59e10b13fa67ddf79f60aa8cab40122ef3f7d7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "829bb582_2c53977d",
+        "filename": "src/test/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusIT.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-18T08:49:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5d3e2ea_584ea238",
       "range": {
         "startLine": 60,
         "startChar": 37,
