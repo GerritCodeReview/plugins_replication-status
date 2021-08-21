@@ -49,6 +49,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "822d7a94_efb122fb",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ConfigParser.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-08-21T07:15:35Z",
+      "side": 1,
+      "message": "nit: class and public method can be package protected",
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02ce4dd0_6eff2a5c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/RemoteURLConfiguration.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-08-21T07:15:35Z",
+      "side": 1,
+      "message": "nit: class and public method can be package protected",
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff06b5a8_959a55ee",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
         "patchSetId": 6
@@ -88,6 +122,52 @@
         "startChar": 34,
         "endLine": 106,
         "endChar": 48
+      },
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5c5fc71_860649f9",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-08-21T07:15:35Z",
+      "side": 1,
+      "message": "nit: use method reference",
+      "range": {
+        "startLine": 128,
+        "startChar": 8,
+        "endLine": 128,
+        "endChar": 45
+      },
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cb7f73a_f74f0a93",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2021-08-21T07:15:35Z",
+      "side": 1,
+      "message": "nit: ReplicationStatus.Key contains ref so maybe it could be turned to stream and map collect?",
+      "range": {
+        "startLine": 136,
+        "startChar": 4,
+        "endLine": 145,
+        "endChar": 23
       },
       "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
