@@ -6,9 +6,11 @@
       "updated": "2021-08-23T17:27:29Z"
     },
     "gerritforge:plugins-replication-status-code-style": {
-      "state": "SCHEDULED",
+      "state": "RUNNING",
+      "url": "https://gerrit-ci.gerritforge.com/job/plugin-replication-status-verifier/job/68%252F314768%252F7/1/console",
+      "started": "2021-08-23T17:30:50Z",
       "created": "2021-08-23T17:27:28Z",
-      "updated": "2021-08-23T17:27:28Z"
+      "updated": "2021-08-23T17:28:14Z"
     }
   }
 }
