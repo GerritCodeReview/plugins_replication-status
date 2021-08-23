@@ -64,6 +64,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7993c82_b80b2452",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ConfigParser.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-23T17:17:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "822d7a94_efb122fb",
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02ce4dd0_6eff2a5c",
@@ -81,6 +99,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aff4521_f53cd8d8",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/RemoteURLConfiguration.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-23T17:17:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02ce4dd0_6eff2a5c",
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff06b5a8_959a55ee",
@@ -94,6 +130,30 @@
       "writtenOn": "2021-08-21T00:47:47Z",
       "side": 1,
       "message": "Can you introduce some functions to make this more readable?",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 80
+      },
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "446bca50_c2e53fa1",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-23T17:17:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff06b5a8_959a55ee",
       "range": {
         "startLine": 96,
         "startChar": 0,
@@ -127,6 +187,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc9e5c97_83340367",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-23T17:17:34Z",
+      "side": 1,
+      "message": "Yep, but I wanted to keep original code to make the review easier to understand",
+      "parentUuid": "148e8cb1_a27acb03",
+      "range": {
+        "startLine": 106,
+        "startChar": 34,
+        "endLine": 106,
+        "endChar": 48
+      },
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e5c5fc71_860649f9",
@@ -150,6 +234,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "303a20c5_340bb67c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-23T17:17:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5c5fc71_860649f9",
+      "range": {
+        "startLine": 128,
+        "startChar": 8,
+        "endLine": 128,
+        "endChar": 45
+      },
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7cb7f73a_f74f0a93",
@@ -163,6 +271,30 @@
       "writtenOn": "2021-08-21T07:15:35Z",
       "side": 1,
       "message": "nit: ReplicationStatus.Key contains ref so maybe it could be turned to stream and map collect?",
+      "range": {
+        "startLine": 136,
+        "startChar": 4,
+        "endLine": 145,
+        "endChar": 23
+      },
+      "revId": "3be87f725d4c5ef1dbd48bba6d63096395642b02",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a62cde68_0f5db09e",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusAction.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2021-08-23T17:17:34Z",
+      "side": 1,
+      "message": "Sure, I wanted to keep the original code to make the change easier to review",
+      "parentUuid": "7cb7f73a_f74f0a93",
       "range": {
         "startLine": 136,
         "startChar": 4,
