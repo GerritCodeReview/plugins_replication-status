@@ -119,7 +119,7 @@ public abstract class ReplicationStatus {
           return FAILED;
         default:
           logger.atSevere().log(
-              "Could not parse result into a valid replication status: %", result);
+              "Could not parse result into a valid replication status: %s", result);
           return UNKNOWN;
       }
     }
