@@ -25,8 +25,8 @@ import com.google.gerrit.server.events.EventListener;
 import com.google.gerrit.server.events.RefEvent;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-import com.googlesource.gerrit.plugins.replication.RefReplicatedEvent;
-import com.googlesource.gerrit.plugins.replication.ReplicationScheduledEvent;
+import com.googlesource.gerrit.plugins.replication.events.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.events.ReplicationScheduledEvent;
 
 class EventHandler implements EventListener {
   private final Cache<ReplicationStatus.Key, ReplicationStatus> replicationStatusCache;
