@@ -37,13 +37,14 @@ import com.google.gerrit.httpd.restapi.RestApiServlet;
 import com.google.gerrit.server.config.SitePaths;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
-import com.googlesource.gerrit.plugins.replication.RefReplicatedEvent;
-import com.googlesource.gerrit.plugins.replication.ReplicationScheduledEvent;
+import com.googlesource.gerrit.plugins.replication.events.RefReplicatedEvent;
+import com.googlesource.gerrit.plugins.replication.events.ReplicationScheduledEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Collections;
 import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.transport.RemoteRefUpdate;
+import org.eclipse.jgit.transport.URIish;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -132,7 +133,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   public void shouldReturnScheduledProjectReplicationStatus() throws Exception {
     long eventCreatedOn = System.currentTimeMillis();
 
-    eventHandler.onEvent(scheduledEvent(null, eventCreatedOn, REF_MASTER, REMOTE));
+    eventHandler.onEvent(scheduledEvent(null, eventCreatedOn, REF_MASTER, new URIish(REMOTE)));
     RestResponse result = adminRestSession.get(endpoint(project, REMOTE));
 
     result.assertOK();
@@ -216,9 +217,9 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
       String ref,
       String remote,
       RefPushResult status,
-      RemoteRefUpdate.Status refStatus) {
+      RemoteRefUpdate.Status refStatus) throws URISyntaxException {
     RefReplicatedEvent replicatedEvent =
-        new RefReplicatedEvent(project.get(), ref, remote, status, refStatus);
+        new RefReplicatedEvent(project.get(), ref, new URIish(remote), status, refStatus);
     replicatedEvent.instanceId = instanceId;
     replicatedEvent.eventCreatedOn = when;
 
@@ -226,7 +227,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   }
 
   private ReplicationScheduledEvent scheduledEvent(
-      @Nullable String instanceId, long when, String ref, String remote) {
+      @Nullable String instanceId, long when, String ref, URIish remote) {
     ReplicationScheduledEvent scheduledEvent =
         new ReplicationScheduledEvent(project.get(), ref, remote);
     scheduledEvent.instanceId = instanceId;
@@ -236,7 +237,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   }
 
   private RefReplicatedEvent successReplicatedEvent(
-      @Nullable String instanceId, long when, String remoteUrl) {
+      @Nullable String instanceId, long when, String remoteUrl) throws URISyntaxException {
 
     return replicatedEvent(
         instanceId,
@@ -248,7 +249,7 @@ public class ReplicationStatusIT extends LightweightPluginDaemonTest {
   }
 
   private RefReplicatedEvent failedReplicatedEvent(
-      @Nullable String instanceId, long when, String remoteUrl) {
+      @Nullable String instanceId, long when, String remoteUrl) throws URISyntaxException {
 
     return replicatedEvent(
         instanceId,
