@@ -46,10 +46,10 @@ class EventHandler implements EventListener {
     if (shouldConsume(event)) {
       if (event instanceof RefReplicatedEvent) {
         RefReplicatedEvent replEvent = (RefReplicatedEvent) event;
-        putCacheEntry(replEvent, replEvent.targetNode, replEvent.status);
+        putCacheEntry(replEvent, replEvent.targetUri, replEvent.status);
       } else if (event instanceof ReplicationScheduledEvent) {
         ReplicationScheduledEvent replEvent = (ReplicationScheduledEvent) event;
-        putCacheEntry(replEvent, replEvent.targetNode, SCHEDULED.name());
+        putCacheEntry(replEvent, replEvent.targetUri, SCHEDULED.name());
       }
     }
   }
