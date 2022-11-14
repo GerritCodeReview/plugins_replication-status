@@ -48,6 +48,7 @@ class EventHandler implements EventListener {
 
   @Override
   public void onEvent(Event event) {
+
     if (shouldConsume(event) && (event instanceof RemoteRefReplicationEvent)) {
       RemoteRefReplicationEvent replicationEvent = (RemoteRefReplicationEvent) event;
       putCacheEntry(
