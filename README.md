@@ -6,6 +6,13 @@ into the Gerrit replication_log
 Consumes replication events and updates a cache with the latest replication
 status of specific refs to specific remotes.
 
+## Dependencies
+
+The @PLUGIN@ depends on the [replication plugin](https://gerrit.googlesource.com/plugins/replication/).
+Check the [configuration section](./src/main/resources/Documentation/config.md) for more details.
+
+## REST API
+
 The cache information is then exposed via a project's resource REST endpoint:
 
 ```bash

@@ -1,9 +1,24 @@
 # Config
 
+## Dependencies
+
+Since the @PLUGIN@ plugin relies on some events defined in the `replication`
+plugin, the latter must be installed as a library module in the
+`$GERRIT_SITE/lib` folder.
+
+It can be a simple symlink as follows:
+
+```bash
+cd $GERRIT_SITE/lib
+ln -s $GERRIT_SITE/plugins/replication.jar .
+```
+
+## Settings
+
 The plugin itself has no specific configuration, however some Gerrit specific
 settings are relevant.
 
-## Cache
+### Cache
 
 This plugin relies on a cache to store replication status information, the
 global cache configuration settings apply.
@@ -31,7 +46,7 @@ for example:
    maxAge = 1 day
 ```
 
-## Gerrit instanceId
+### Gerrit instanceId
 
 This plugin will try to discriminate among events produced by the current
 instances versus events produced by different instances.
