@@ -111,7 +111,7 @@ public abstract class ReplicationStatus {
       switch (result.toLowerCase()) {
         case "succeeded":
           return SUCCEEDED;
-        case "not_attempted":
+        case "not-attempted":
           return NOT_ATTEMPTED;
         case "scheduled":
           return SCHEDULED;
