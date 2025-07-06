@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "gerritforge:plugins-replication-status-code-style": {
+      "state": "RUNNING",
+      "url": "https://gerrit-ci.gerritforge.com/job/plugin-replication-status-verifier/job/01%252F488701%252F1/1/console",
+      "started": "2025-07-06T23:18:56Z",
+      "created": "2025-07-06T23:18:56Z",
+      "updated": "2025-07-06T23:18:56Z"
+    }
+  }
+}
