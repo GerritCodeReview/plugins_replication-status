@@ -20,6 +20,9 @@ import static com.googlesource.gerrit.plugins.replicationstatus.ReplicationStatu
 import com.google.gerrit.extensions.registration.DynamicMap;
 import com.google.gerrit.extensions.restapi.RestApiModule;
 import com.google.inject.Scopes;
+import com.googlesource.gerrit.plugins.replicationstatus.ui.GetItems;
+import com.googlesource.gerrit.plugins.replicationstatus.ui.ItemResource;
+import com.googlesource.gerrit.plugins.replicationstatus.ui.ListItems;
 
 class ReplicationStatusApiModule extends RestApiModule {
   @Override
@@ -29,5 +32,9 @@ class ReplicationStatusApiModule extends RestApiModule {
     child(PROJECT_KIND, "remotes").to(ReplicationStatusProjectRemoteCollection.class);
     get(REPLICATION_STATUS_PROJECT_REMOTE_KIND, "replication-status")
         .to(ReplicationStatusAction.class);
+
+    bind(ListItems.class).in(Scopes.SINGLETON);
+    DynamicMap.mapOf(binder(), ItemResource.ITEM_KIND);
+    child(PROJECT_KIND, "item-collection").to(GetItems.class);
   }
 }
