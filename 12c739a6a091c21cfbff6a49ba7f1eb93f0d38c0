@@ -66,6 +66,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "387f68c2_ad00449c",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusApiModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2025-07-07T21:45:34Z",
+      "side": 1,
+      "message": "\u003e GetItems is a `ChildCollection`, so it should be good ?\n\nOh, whoops, sorry. Yeah, `child()` should be appropriate for that.\n\n\u003e \n\u003e Is there a way to see all the registered endpoints ?\n\nNot sure.\n\nMaybe it\u0027s a mismatch between your `ITEM_KIND` and `PluginResource.PLUGIN_KIND`? Your `ItemResource` extends `ConfigResource` but so does `PluginResource`. Should `ItemResource` extend `PluginResource` instead? Or can you remove `ItemResource` and use `PluginResource` instead?",
+      "parentUuid": "e78e4be5_baf70b3d",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "12c739a6a091c21cfbff6a49ba7f1eb93f0d38c0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "867e5bb8_29410c6e",
