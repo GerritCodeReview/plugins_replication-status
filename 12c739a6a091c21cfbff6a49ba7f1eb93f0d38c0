@@ -90,6 +90,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b3d5dfa_aa3eca73",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusApiModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4069542
+      },
+      "writtenOn": "2025-07-07T22:11:43Z",
+      "side": 1,
+      "message": "Tried changing `ItemResource` to extend `PluginResource` but no luck.\n\nAll the core endpoints are namespaced with `gerrit~`, I\u0027m not sure if there is any such namespace configured. Currently the endpoint I\u0027m trying to hit is\n\n```\nhttp://localhost:8080/a/plugins/replication-status/item\n```",
+      "parentUuid": "387f68c2_ad00449c",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "12c739a6a091c21cfbff6a49ba7f1eb93f0d38c0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "867e5bb8_29410c6e",
