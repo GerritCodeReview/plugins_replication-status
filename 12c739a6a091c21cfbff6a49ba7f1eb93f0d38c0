@@ -42,6 +42,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e78e4be5_baf70b3d",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusApiModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4069542
+      },
+      "writtenOn": "2025-07-07T21:16:28Z",
+      "side": 1,
+      "message": "GetItems is a `ChildCollection`, so it should be good ?\n\nAlso, I tried changing to get() and then modifying GetItems to RestReadView but it didn\u0027t work either. Is there a way to see all the registered endpoints ?",
+      "parentUuid": "3c31f77b_20d40e2f",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "12c739a6a091c21cfbff6a49ba7f1eb93f0d38c0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "867e5bb8_29410c6e",
