@@ -114,6 +114,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e51cfe8c_95fa16a7",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/replicationstatus/ReplicationStatusApiModule.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1012457
+      },
+      "writtenOn": "2025-07-08T20:07:27Z",
+      "side": 1,
+      "message": "`javatests/com/google/gerrit/acceptance/rest/binding/PluginProvidedRootRestApiBindingsIT.java` might help.",
+      "parentUuid": "9b3d5dfa_aa3eca73",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "12c739a6a091c21cfbff6a49ba7f1eb93f0d38c0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "867e5bb8_29410c6e",
