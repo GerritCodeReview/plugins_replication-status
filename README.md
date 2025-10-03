@@ -1,4 +1,11 @@
-# Replication-status
+# DEPRECATION NOTICE
+
+GerritForge has decided to [change the license to BSL](https://gitenterprise.me/2025/09/30/re-licensing-gerritforge-plugins-welcome-to-gerrit-enterprise/)
+therefore the Apache 2.0 version of this plugin is deprecated.
+The recommended version of the replication-status plugin is on [GitHub](https://github.com/GerritForge/replication-status)
+and the development continues on [GerritHub.io](https://review.gerrithub.io/admin/repos/GerritForge/replication-status,general)
+
+# Replication-status (DEPRECATED)
 
 Record and display the repository's replication status without having to dig
 into the Gerrit replication_log
